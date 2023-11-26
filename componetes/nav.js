@@ -25,7 +25,7 @@ class Nav extends HTMLElement {
                 <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"
                   aria-expanded="false">Multimedia</a>
                 <ul class="dropdown-menu " data-bs-popper="static">
-                  <li><a class="dropdown-item" href="#">Juegos</a></li>
+                  <li><a class="dropdown-item" href="./juegos.html">Juegos</a></li>
                   <li><a class="dropdown-item" href="#">Videos</a></li>
                   <li><a class="dropdown-item" href="#">Album</a></li>
                 </ul>

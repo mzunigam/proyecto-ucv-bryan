@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="./vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../CSS/navbar.css">
+    <link href="../CSS/pacman.css" type="text/css" rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<body style="background-image: url(../Asset/fondocursos.png);" >
+    <div class="container-fluid" style="padding-left: 0px;
+    padding-right: 0px; padding-top: 0px; padding-bottom: 15px;">
+        <div class="row">
+            <div class="col-md-12">
+                <nav-bar/>
+                <script src="../componetes/nav.js"></script>
+            </div>
+        </div>
+        <div class="d-flex flex-column flex-md-row p-4 gap-4 py-md-5 align-items-center justify-content-center"
+            style="margin: 1% 10%;">
+            <main class="d-flex align-items-center  justify-content-center modal-content p-4 rounded-4 shadow"
+                style="background-image: url(../Asset/fondotabla.png); min-width: 400px;">
+                <div>
+                    <h3 class="text-[3rem] text-white ">JUEGOS</h3>
+                </div>
+            </main>
+        </div>
+        <div class="d-flex flex-column flex-md-row p-4 gap-4 py-md-5 align-items-center justify-content-center"
+            style="margin: 1% 10%;">
+            <main class="d-flex align-items-center  justify-content-center modal-content p-4 rounded-4 shadow"
+                style="background-image: url(../Asset/fondotabla.png); min-width: 400px; font-family: initial; line-height: initial;">
+                <div> 
+                <h3 class="text-[3rem] text-white ">Score: <span id="score"></span></h3></div>
+                <div id="board"></div>
+            </main>
+        </div>
+        <div class="d-flex flex-column flex-md-row p-4 gap-4 py-md-5 align-items-center justify-content-center"
+            style="margin: 1% 10%;">
+            <main class="d-flex align-items-center  justify-content-center modal-content p-4 rounded-4 shadow"
+                style="background-image: url(../Asset/fondotabla.png); min-width: 400px;">
+                <div class="col-md-12 text-white">
+                    <div class="col-md-12">
+                        <div class="col-md-6">
+                            <h2 class="text-center my-4 ms-4" style="color:rgb(43, 230, 43)">
+                                Juego de memoria
+                            </h2>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6" style="display: grid;
+                        grid-template-columns: 100px 100px 100px 100px;
+                        grid-template-rows: repeat(4,1fr);
+                        justify-items: center;
+                        justify-content: center;
+                        gap: 1rem;">
+                                <!-- <div class="row col-md-12" > -->
+                                <div class="col-md-3">
+                                    <button id="0" onclick="flip(0)" class="btn btn-success"
+                                        style="width: 100px; height: 100px;"></button>
+                                </div>
+                                <div class="col-md-3">
+                                    <button id="1" onclick="flip(1)" class="btn btn-success"
+                                        style="width: 100px; height: 100px;"></button>
+                                </div>
+                                <div class="col-md-3">
+                                    <button id="2" onclick="flip(2)" class="btn btn-success"
+                                        style="width: 100px; height: 100px;"></button>
+                                </div>
+                                <div class="col-md-3">
+                                    <button id="3" onclick="flip(3)" class="btn btn-success"
+                                        style="width: 100px; height: 100px;"></button>
+                                </div>
+                                <!-- </div> -->
+                                <!-- <div class="row col-md-12"> -->
+                                <div class="col-md-3">
+                                    <button id="4" onclick="flip(4)" class="btn btn-success"
+                                        style="width: 100px; height: 100px;"></button>
+                                </div>
+                                <div class="col-md-3">
+                                    <button id="5" onclick="flip(5)" class="btn btn-success"
+                                        style="width: 100px; height: 100px;"></button>
+                                </div>
+                                <div class="col-md-3">
+                                    <button id="6" onclick="flip(6)" class="btn btn-success"
+                                        style="width: 100px; height: 100px;"></button>
+                                </div>
+                                <div class="col-md-3">
+                                    <button id="7" onclick="flip(7)" class="btn btn-success"
+                                        style="width: 100px; height: 100px;"></button>
+                                </div>
+                                <!-- </div> -->
+                                <!-- <div class="row col-md-12"> -->
+                                <div class="col-md-3">
+                                    <button id="8" onclick="flip(8)" class="btn btn-success"
+                                        style="width: 100px; height: 100px;"></button>
+                                </div>
+                                <div class="col-md-3">
+                                    <button id="9" onclick="flip(9)" class="btn btn-success"
+                                        style="width: 100px; height: 100px;"></button>
+                                </div>
+                                <div class="col-md-3">
+                                    <button id="10" onclick="flip(10)" class="btn btn-success"
+                                        style="width: 100px; height: 100px;"></button>
+                                </div>
+                                <div class="col-md-3">
+                                    <button id="11" onclick="flip(11)" class="btn btn-success"
+                                        style="width: 100px; height: 100px;"></button>
+                                </div>
+                                <!-- </div> -->
+                                <!-- <div class="row col-md-12"> -->
+                                <div class="col-md-3">
+                                    <button id="12" onclick="flip(12)" class="btn btn-success"
+                                        style="width: 100px; height: 100px;"></button>
+                                </div>
+                                <div class="col-md-3">
+                                    <button id="13" onclick="flip(13)" class="btn btn-success"
+                                        style="width: 100px; height: 100px;"></button>
+                                </div>
+                                <div class="col-md-3">
+                                    <button id="14" onclick="flip(14)" class="btn btn-success"
+                                        style="width: 100px; height: 100px;"></button>
+                                </div>
+                                <div class="col-md-3">
+                                    <button id="15" onclick="flip(15)" class="btn btn-success"
+                                        style="width: 100px; height: 100px;"></button>
+                                </div>
+                                <!-- </div> -->
+                            </div>
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <h3> <i class="fa fa-bug" aria-hidden="true"></i> <span id="showSuccesses">Aciertos:
+                                                0</span></h3>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <h3><i class="far fa-clock"></i> <span id="showTime">Tiempo restante:<br>30
+                                                segundos</span></h3>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <h3><i class="fas fa-crown"></i> <span id="movements">Movimientos: 0</span></h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <script src="../Js/adivina.js"></script>
+                        </div>
+                    </div>
+                    <script src="../Js/adivina.js"></script>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../main.js" type="module"></script>
+    <script src="../Js/screen.js"></script>
+    <script src="../Js/pacman.js"></script>
+    <script src="../Js/ghost.js"></script>
+</body>
+
+</html>
