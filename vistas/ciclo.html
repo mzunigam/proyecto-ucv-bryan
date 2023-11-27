@@ -26,84 +26,26 @@
             style="margin: 1% 10%;">
             <main class="d-flex align-items-center  justify-content-center modal-content p-4 rounded-4 shadow"
                 style="background-image: url(../Asset/fondotabla.png); min-width: 400px;">
-                <div class="d-flex align-items-center justify-content-center m-2">
-                    <h3 class="text-[3rem] text-white ">Estoy aprendiendo</h3>
-                </div>
-                <div class="mt-[1rem]">
-                    <h4 class="text-[3rem] text-white">Cursos en los que estas inscrito</h4>
-                </div>
-                <div class="mt-[3rem] bg-[#3b384d] w-max">
-                    <table class="table-auto w-[39rem] text-[1rem]">
-                        <thead class="text-xs font-semibold uppercase text-gray-400 bg-[#1f2937]">
-                            <tr>
-                                <th class="p-2">
-                                    <div class="d-flex align-items-center justify-content-center m-2 text-white">Nº</div>
-                                </th>
-                                <th class="p-2">
-                                    <div class=" text-[3rem] text-white">Curso</div>
-                                </th>
-                                <th class="p-2">
-                                    <div class=" text-white">Descripción</div>
-                                </th>
-                                <th class="p-2">
-                                    <div class="text-[3rem] text-white">Avance
-                                    </div>
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-[#2f2c3d] text-white">
-                            <tr>
-                                <td class="p-2">
-                                    <div class="text-center">1</div>
-                                </td>
-                                <td class="p-2">
-                                    <div class="text-left">Programación</div>
-                                </td>
-                                <td class="p-2">
-                                    <div class="text-left text-green-300 text-[0.88rem]">Aprender a programar es un
-                                        proceso
-                                        amplio y diverso que implica adquirir habilidades para comunicarse con las
-                                        computadoras y darles instrucciones para realizar tareas específicas</div>
-                                </td>
-                                <td class="p-2">
-               
-                                    <div style="width:100%; border:1px solid rgb(255, 255, 255)">
-                                        <div id="myBar" style="width: 100%; background: #22e21b;">
-                                            <div style="text-align: center; width: 100%;">100%</div>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="p-2">
-                                    <div class="text-center">2</div>
-                                </td>
-                                <td class="p-2">
-                                    <div class="text-white" >
-                                        <a class="text-white" href="./modulo.html">Instalaciones Electricas </a>
-                                    </div>
-                                </td>
-                                <td class="p-2">
-                                    <div class="text-left text-green-300 text-[0.88rem]">El proyecto de estudio estará considerando la variable el efecto del Sistema Web con Gamificacion y Microlearning para el Aprendizaje de Instalaciones Eléctricas en una Entidad Educativa</div>
-                                </td>
-                                <td class="p-2">
-                                    <div style="width:100%; border:1px solid rgb(255, 255, 255)">
-                                        <div id="myBar" style="width: 75%; background: #22e21b;">
-                                            <div style="text-align: center; width: 100%;">75%</div>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="p-2" colspan="4">
-                                    
-                                    <button class="btn btn-outline-secondary" type="button" style="border-color: white;
-                                    color: white;">Registrar un Nuevo Curso</button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+                    <form>
+                      <div style="text-align: center;">
+                        <img class="mb-4" src="../Asset/Icon/ciclo.png" alt="" style="WIDTH: 150px;height: 90px;">
+                        <h1 class="h3 mb-3 fw-normal text-white">REGISTRO DE CICLO ACADEMICO</h1>
+                      </div>
+                      <div class="form-floating">
+                        <input type="text" class="form-control" id="floatingInput" placeholder="Escribir el periodo del ciclo">
+                        <label for="floatingInput">Ciclo Academico</label>
+                      </div>
+                      <div class="form-floating">
+                          <input type="date" class="form-control" id="floatingInput" placeholder="Fecha Inicio">
+                          <label for="floatingInput">Fecha Inicio</label>
+                        </div>
+                        <div class="form-floating">
+                          <input type="date" class="form-control" id="floatingInput" placeholder="Fecha Fin">
+                          <label for="floatingInput">Fecha Fin</label>
+                        </div>
+                      <a class="btn btn-primary w-100 py-2"  href="./index.html">Registrarme</a>
+                    </form>
+                  
             </main>
         </div>
 
