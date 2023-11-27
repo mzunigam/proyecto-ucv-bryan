@@ -38,6 +38,10 @@ class Nav extends HTMLElement {
                   <li><a class="dropdown-item" href="./login.html">Iniciar Sesion</a></li>
                   <li><a class="dropdown-item" href="./miscursos.html">Mis Cursos</a></li>
                   <li><a class="dropdown-item" href="#">Mis Notas</a></li>
+                  <li><a class="dropdown-item" href="./matricula.html">Matricula</a></li>
+                  <li><a class="dropdown-item" href="./colegio.html">Colegio</a></li>
+                  <li><a class="dropdown-item" href="./supervisor.html">Supervisor</a></li>
+                  <li><a class="dropdown-item" href="./ciclo.html">Ciclo</a></li>
                 </ul>
               </li>
             </ul>
