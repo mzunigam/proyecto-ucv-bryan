@@ -15,41 +15,43 @@
    
     <div class="container-fluid" style="padding-left: 0px;
     padding-right: 0px; padding-top: 0px; padding-bottom: 15px;">
-        <div class="row">
-            <div class="col-md-12">
-                 <!-- usar el nav del nav.js -->
-      <nav-bar/>
-      <script src="../componetes/nav.js"></script>
-            </div>
-        </div>
+        <div class="row" style="
+        position: sticky;
+        top: 0;
+        z-index: 999;">
+    <div class="col-md-12">
+         <!-- usar el nav del nav.js -->
+  <nav-bar/>
+  <script src="../Componentes/Navbar.js"></script>
+    </div>
+</div>
         <div class="d-flex flex-column flex-md-row p-4 gap-4 py-md-5 align-items-center justify-content-center"
             style="margin: 1% 10%;">
             <main class="d-flex align-items-center  justify-content-center modal-content p-4 rounded-4 shadow"
                 style="background-image: url(../Asset/fondotabla.png); min-width: 400px;">
-                    <form>
+                    <div>
                       <div style="text-align: center;">
                         <img class="mb-4" src="../Asset/Icon/colegio.png" alt="" style="WIDTH: 150px;height: 120px;">
                         <h1 class="h3 mb-3 fw-normal text-white">REGISTRO DE COLEGIO</h1>
                       </div>
                       <div class="form-floating">
-                        <input type="text" class="form-control" id="floatingInput" placeholder="Nombre del Colegio">
-                        <label for="floatingInput">Nombre del Colegio</label>
+                        <input type="text" class="form-control" id="nombreInput" placeholder="Nombre del Colegio">
+                        <label for="nombreInput">Nombre del Colegio</label>
                       </div>
                       <div class="form-floating">
-                        <input type="text" class="form-control" id="floatingInput" placeholder="Ubicacion">
-                        <label for="floatingInput">Ubicacion</label>
+                        <input type="text" class="form-control" id="ubiInput" placeholder="Ubicacion">
+                        <label for="ubiInput">Ubicacion</label>
                       </div>
                       <div class="form-floating">
-                        <input type="text" class="form-control" id="floatingInput" placeholder="Distrito">
-                        <label for="floatingInput">Distrito</label>
+                        <input type="text" class="form-control" id="distritoInput" placeholder="Distrito">
+                        <label for="distritoInput">Distrito</label>
                       </div>
                       <div class="form-floating">
-                        <input type="text" class="form-control" id="floatingInput" placeholder="Departamento">
-                        <label for="floatingInput">Departamento</label>
+                        <input type="text" class="form-control" id="departamentoInput" placeholder="Departamento">
+                        <label for="departamentoInput">Departamento</label>
                       </div>
-                      <a class="btn btn-primary w-100 py-2"  href="./index.html">Registrarme</a>
-                    </form>
-                  
+                      <button id="btncolegio" class="btn btn-primary w-100 py-2" style="margin-bottom: 10px;">Registrar</button>
+                    </div>
             </main>
         </div>
 
@@ -58,7 +60,8 @@
     <script src="../node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
     <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="../main.js" type="module"></script>
-
+    <script src="../Js/prevenir.js"></script>
+    <script src="../Js/registrarColegio.js"></script>
 </body>
 
 </html>

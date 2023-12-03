@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="./vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="../CSS/navbar.css">
-
     <title>Document</title>
 </head>
 
@@ -15,46 +13,44 @@
    
     <div class="container-fluid" style="padding-left: 0px;
     padding-right: 0px; padding-top: 0px; padding-bottom: 15px;">
-        <div class="row">
-            <div class="col-md-12">
-                 <!-- usar el nav del nav.js -->
-      <nav-bar/>
-      <script src="../componetes/nav.js"></script>
-            </div>
-        </div>
+        <div class="row" style="
+        position: sticky;
+        top: 0;
+        z-index: 999;">
+    <div class="col-md-12">
+         <!-- usar el nav del nav.js -->
+  <nav-bar/>
+  <script src="../Componentes/Navbar.js"></script>
+    </div>
+</div>
         <div class="d-flex flex-column flex-md-row p-4 gap-4 py-md-5 align-items-center justify-content-center"
             style="margin: 1% 10%;">
             <main class="d-flex align-items-center  justify-content-center modal-content p-4 rounded-4 shadow"
                 style="background-image: url(../Asset/fondotabla.png); min-width: 400px;">
-                    <form>
+                    <div>
                       <div style="text-align: center;">
                         <img class="mb-4" src="../Asset/Icon/supervisor.png" alt="" style="WIDTH: 150px;height: 170px;">
                         <h1 class="h3 mb-3 fw-normal text-white">REGISTRO DEL SUPERVISOR</h1>
                       </div>
                       <div class="form-floating">
-                        <input type="text" class="form-control" id="floatingInput" placeholder="Nombre del supervisor">
-                        <label for="floatingInput">Nombre del supervisor</label>
+                        <input type="text" class="form-control" id="nombreInput" placeholder="Nombre del supervisor">
+                        <label for="nombreInput">Nombre del supervisor</label>
                       </div>
                       <div class="form-floating">
-                        <input type="text" class="form-control" id="floatingInput" placeholder="Apellido del supervisor">
-                        <label for="floatingInput">Apellido del supervisor</label>
+                        <input type="text" class="form-control" id="apellidoInput" placeholder="Apellido del supervisor">
+                        <label for="apellidoInput">Apellido del supervisor</label>
                       </div>
-                      <div class="form-floating">
-                        <input type="text" class="form-control" id="floatingInput" placeholder="Colegio">
-                        <label for="floatingInput">Colegio</label>
-                      </div>
-                      <a class="btn btn-primary w-100 py-2"  href="./index.html">Registrarme</a>
-                    </form>
-                  
+                      <button id="btnsupervisor" class="btn btn-primary w-100 py-2" style="margin-bottom: 10px;">Registrar</button>
+                    </div>
             </main>
         </div>
-
     </div>
     <script src="../node_modules/jquery/dist/jquery.min.js"></script>
     <script src="../node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
     <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="../main.js" type="module"></script>
-
+    <script src="../Js/prevenir.js"></script>
+    <script src="../Js/crearSupervisor.js"></script>
 </body>
 
 </html>

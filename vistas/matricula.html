@@ -15,44 +15,47 @@
    
     <div class="container-fluid" style="padding-left: 0px;
     padding-right: 0px; padding-top: 0px; padding-bottom: 15px;">
-        <div class="row">
-            <div class="col-md-12">
-                 <!-- usar el nav del nav.js -->
-      <nav-bar/>
-      <script src="../componetes/nav.js"></script>
-            </div>
-        </div>
+        <div class="row" style="
+        position: sticky;
+        top: 0;
+        z-index: 999;">
+    <div class="col-md-12">
+         <!-- usar el nav del nav.js -->
+  <nav-bar/>
+  <script src="../Componentes/Navbar.js"></script>
+    </div>
+</div>
         <div class="d-flex flex-column flex-md-row p-4 gap-4 py-md-5 align-items-center justify-content-center"
             style="margin: 1% 10%;">
             <main class="d-flex align-items-center  justify-content-center modal-content p-4 rounded-4 shadow"
                 style="background-image: url(../Asset/fondotabla.png); min-width: 400px;">
-                    <form>
+                    <div>
                       <div style="text-align: center;">
                         <img class="mb-4" src="../Asset/Icon/matricula.png" alt="" style="WIDTH: 150px;height: 170px;">
                         <h1 class="h3 mb-3 fw-normal text-white">CREACION DE MATRICULA</h1>
                       </div>
                       <div class="form-floating">
-                        <input type="text" class="form-control" id="floatingInput" placeholder="Nombre del Curso">
-                        <label for="floatingInput">Nombre del Curso</label>
+                        <input type="text" class="form-control" id="nombreInput" placeholder="Nombre del Curso">
+                        <label for="nombreInput">Nombre del Curso</label>
                       </div>
                       <div class="form-floating">
-                        <input type="text" class="form-control" id="floatingInput" placeholder="Descripción">
-                        <label for="floatingInput">Descripción</label>
+                        <input type="text" class="form-control" id="descripcionInput" placeholder="Descripción">
+                        <label for="descripcionInput">Descripción</label>
                       </div>
                       <div class="form-floating">
-                        <input type="text" class="form-control" id="floatingInput" placeholder="ID Colegio">
-                        <label for="floatingInput">ID Colegio</label>
+                        <input type="number" class="form-control" id="idcicloInput" placeholder="ID Ciclo" required>
+                        <label for="idcicloInput">ID Ciclo</label>
                       </div>
                       <div class="form-floating">
-                        <input type="text" class="form-control" id="floatingInput" placeholder="ID Ciclo">
-                        <label for="floatingInput">ID Ciclo</label>
+                        <input type="number" class="form-control" id="idcolegioInput" placeholder="ID Colegio" required>
+                        <label for="idcolegioInput">ID Colegio</label>
                       </div>
                       <div class="form-floating">
-                        <input type="text" class="form-control" id="floatingInput" placeholder="ID Supervisor">
-                        <label for="floatingInput">ID Supervisor</label>
+                        <input type="number" class="form-control" id="idsupervisorInput" placeholder="ID Supervisor" required>
+                        <label for="idsupervisorInput">ID Supervisor</label>
                       </div>
-                      <a class="btn btn-primary w-100 py-2"  href="./index.html">Registrarme</a>
-                    </form>
+                      <button id="btnmatricula" class="btn btn-primary w-100 py-2" style="margin-bottom: 10px;">Registrar</button>
+                    </div>
                   
             </main>
         </div>
@@ -113,7 +116,8 @@
     <script src="../node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
     <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="../main.js" type="module"></script>
-
+    <script src="../Js/prevenir.js"></script>
+    <script src="../Js/registroMatricula.js"></script>
 </body>
 
 </html>
