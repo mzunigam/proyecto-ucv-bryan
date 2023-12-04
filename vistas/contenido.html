@@ -23,127 +23,156 @@
             top: 0;
             z-index: 999;">
         <div class="col-md-12">
-             <!-- usar el nav del nav.js -->
-      <nav-bar/>
-      <script src="../Componentes/Navbar.js"></script>
+            <!-- usar el nav del nav.js -->
+            <nav-bar />
+            <script src="../Componentes/Navbar.js"></script>
         </div>
     </div>
     <div class="container-fluid">
-        <div class="row">
+        <div class="row" style="margin: 1% 10%;">
             <div class="col-md-12">
                 <div class="row">
-                    <div class="col-md-12">
-                        <h3 class="text-center" style="color:rgb(255, 255, 255)">
+                    <div class="col-md-12" style="margin-top: 15px;">
+                        <h3 class="text-center " style="color:rgb(2, 75, 8)">
                             IMPLEMENTOS
                         </h3>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <h3 class="text-center" style="color:rgb(255, 255, 255)">
-                                    Las herramientas son instrumentos, por lo general, de hierro o acero y son empleadas en la realización de trabajos.
-                                    Las herramientas del electricista deben tener unos mangos o brazos bien aislados para soportar 600 voltios, y en tamaños adecuados que permitan hacer las operaciones principales.
-                                </h3>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row" >
+                        <div class="col-md-12">
+                            <h3 class="text-center" style="color:rgb(255, 255, 255)">
+
+                            </h3>
+
+                            <main
+                                class="d-flex align-items-center  justify-content-center modal-content p-4 rounded-4 shadow"
+                                style="background-image: url(../Asset/fondotabla.png); min-width: 400px; margin-bottom: 20px;">
+                                <div class="col-md-12">
+                                    <h3 class="text-center text-primary text-white">
+                                        Para poder realizar una instalacion eléctrica, se es necesario instrumentos y
+                                        materiales.<br>
+                                        En este módulo se explicará los materiales que se necesitan y los instrumentos
+                                        con que contar.
+                                        Las herramientas son instrumentos, por lo general, de hierro o acero y son
+                                        empleadas en la realización de trabajos.<br>
+                                        Las herramientas del electricista deben tener unos mangos o brazos bien aislados
+                                        para soportar 600 voltios, y en tamaños adecuados que permitan hacer las
+                                        operaciones principales.<br><br>
+                                        <a style="color: rgb(255, 255, 255);"
+                                            class=" text-decoration-none d-inline-block w-100">Alicate</a>
+                                    </h3>
+                                    <div>
                                         <div class="col-md-12">
-                                            <div class="row">
-                                                <div class="col-md-12">
+                                            <model-viewer style="position: relative;
+                                            width: 100%;
+                                            height: 50vh;" src="../Asset/complementos/3d/alicate/ALICATE.glb" ar
+                                                ar-modes="webxr scene-viewer quick-look" camera-controls
+                                                poster="../Asset/complementos/3d/alicate/poster.webp"
+                                                shadow-intensity="1">
+                                                <div class="progress-bar hide" slot="progress-bar">
+                                                    <div class="update-bar">
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <model-viewer src="../Asset/complementos/3d/alicate/ALICATE.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls poster="../Asset/complementos/3d/alicate/poster.webp" shadow-intensity="1">
-                                                        <div class="progress-bar hide" slot="progress-bar">
-                                                            <div class="update-bar"></div>
-                                                        </div>
-                                                        <button slot="ar-button" id="ar-button">
-                                                            View in your space
-                                                        </button>
-                                                    </model-viewer>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <model-viewer src="../Asset/complementos/3d/destor/DESTORNILLADOR.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls poster="../Asset/complementos/3d/destor/poster.webp" shadow-intensity="1">
-                                                        <div class="progress-bar hide" slot="progress-bar">
-                                                            <div class="update-bar"></div>
-                                                        </div>
-                                                        <button slot="ar-button" id="ar-button">
-                                                            View in your space
-                                                        </button>
-                                                    </model-viewer>
-                                                </div>
-                                            </div>
+                                                <button slot="ar-button" id="ar-button">
+                                                    View in your space
+                                                </button>
+                                            </model-viewer>
                                         </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <h3 class="text-center" style="color:rgb(255, 255, 255)">
-                                    foco
-                                </h3>
-                            </div>
-                            <div class="model-viewer">
-                                <model-viewer  style="position: relative;
-                                width: 100%;
-                                height: 50vh;"
-                                src="../Asset/complementos/3d/foco/lightbulb_low-poly.glb" ar ar-modes="scene-viewer webxr quick-look" camera-controls poster="../Asset/complementos/3d/foco/poster.webp" shadow-intensity="1" auto-rotate>
-                                    <div class="progress-bar hide" slot="progress-bar">
-                                        <div class="update-bar"></div>
                                     </div>
-                                    <button slot="ar-button" id="ar-button">
-                                        View in your space
-                                    </button>
+                                    <div>
+                                        <div class="col-md-12">
+                                            <h3 class="text-center text-primary text-white">
+                                                <a style="color: rgb(255, 255, 255);"
+                                                    class=" text-decoration-none d-inline-block w-100">Destornillador</a>
+                                            </h3>
+                                            <model-viewer style="position: relative;
+                                            width: 100%;
+                                            height: 50vh;" src="../Asset/complementos/3d/destor/DESTORNILLADOR.glb" ar
+                                                ar-modes="webxr scene-viewer quick-look" camera-controls
+                                                poster="../Asset/complementos/3d/destor/poster.webp"
+                                                shadow-intensity="1">
+                                                <div class="progress-bar hide" slot="progress-bar">
+                                                    <div class="update-bar"></div>
+                                                </div>
+                                                <button slot="ar-button" id="ar-button">
+                                                    View in your space
+                                                </button>
+                                            </model-viewer>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12"  >
+                                        <h3 class="text-center" style="color:rgb(255, 255, 255)">
+                                            foco
+                                        </h3>
+                                        <model-viewer style="position: relative;
+                                        width: 100%;
+                                        height: 50vh;" src="../Asset/complementos/3d/foco/lightbulb_low-poly.glb" ar
+                                            ar-modes="scene-viewer webxr quick-look" camera-controls
+                                            poster="../Asset/complementos/3d/foco/poster.webp" shadow-intensity="1" auto-rotate>
+                                            <div class="progress-bar hide" slot="progress-bar">
+                                                <div class="update-bar"></div>
+                                            </div>
+                                            <button slot="ar-button" id="ar-button">
+                                                View in your space
+                                            </button>
+                                        </model-viewer>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <h3 class="text-center" style="color:rgb(255, 255, 255)">
+                                            INTERRUPTORES
+                                        </h3>
                                     
-                                </model-viewer>
-                            </div>
-                            <div class="col-md-12">
-                                <h3 class="text-center" style="color:rgb(255, 255, 255)">
-                                    INTERRUPTORES
-                                </h3>
-                            </div>
-                            <div class="model-viewer" >
-                                <model-viewer style="position: relative;
-                                width: 100%;
-                                height: 50vh;" 
-                                src="../Asset/complementos/3d/tomacorriente/tomacorriente_doble_vive.glb" ar ar-modes="scene-viewer webxr quick-look" camera-controls poster="../Asset/complementos/3d/tomacorriente/poster.webp" shadow-intensity="1" auto-rotate>
-                                    <div class="progress-bar hide" slot="progress-bar">
-                                        <div class="update-bar"></div>
+                                        <model-viewer style="position: relative;
+                                                    width: 100%;
+                                                    height: 50vh;"
+                                            src="../Asset/complementos/3d/tomacorriente/tomacorriente_doble_vive.glb" ar
+                                            ar-modes="scene-viewer webxr quick-look" camera-controls
+                                            poster="../Asset/complementos/3d/tomacorriente/poster.webp" shadow-intensity="1" auto-rotate>
+                                            <div class="progress-bar hide" slot="progress-bar">
+                                                <div class="update-bar"></div>
+                                            </div>
+                                            <button slot="ar-button" id="ar-button">
+                                                View in your space
+                                            </button>
+                    
+                                        </model-viewer>
                                     </div>
-                                    <button slot="ar-button" id="ar-button">
-                                        View in your space
-                                    </button>
-                                    
-                                </model-viewer>
-                            </div>
-                            <div class="col-md-12">
-                                <h3 class="text-center" style="color:rgb(255, 255, 255)">
-                                    CABLES
-                            </div>
-                            <div class="model-viewer" >
-                                <model-viewer style="position: relative;
-                                width: 100%;
-                                height: 50vh;" 
-                                src="../Asset/complementos/3d/cables/bunch_of_electric_wires.glb" ar ar-modes="scene-viewer webxr quick-look" camera-controls poster="../Asset/complementos/3d/cables/poster.webp" shadow-intensity="1" auto-rotate>
-                                    <div class="progress-bar hide" slot="progress-bar">
-                                        <div class="update-bar"></div>
+                                    <div>
+                                        <div class="col-md-12">
+                                            <h3 class="text-center" style="color:rgb(255, 255, 255)">
+                                                CABLES <br>
+                                                Para una correcta instalacion, es necesario que los cables puedan ser distinguidos según sus colores para poder diferenciarlos cuando se arme el circuito.
+                                        </div>
+                                        <div class="model-viewer">
+                                            <model-viewer style="position: relative;
+                                                        width: 100%;
+                                                        height: 50vh;" src="../Asset/complementos/3d/cables/bunch_of_electric_wires.glb" ar
+                                                ar-modes="scene-viewer webxr quick-look" camera-controls
+                                                poster="../Asset/complementos/3d/cables/poster.webp" shadow-intensity="1" auto-rotate>
+                                                <div class="progress-bar hide" slot="progress-bar">
+                                                    <div class="update-bar"></div>
+                                                </div>
+                                                <button slot="ar-button" id="ar-button">
+                                                    View in your space
+                                                </button>
+                                            </model-viewer>
+                                        </div>
                                     </div>
-                                    <button slot="ar-button" id="ar-button">
-                                        View in your space
-                                    </button>
-                                </model-viewer>
-                            </div>
+                            </main>
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <h3 class="text-center" style="color:rgb(255, 255, 255)">
-                            asdasdasd
-                        </h3>
-                        
-                    </div>
-                </div>
-                <div class="row">
+            </div>           
+</div>
+        </div>
+
+    
+    <div class="row" style="margin: 1% 10%;">
+        <main class="d-flex align-items-center  justify-content-center modal-content p-4 rounded-4 shadow "
+                    style="background-image: url(../Asset/fondotabla.png); min-width: 400px; margin-bottom: 20px;">
                     <div class="col-md-12 text-white">
                         <div class="col-md-12">
                             <div class="col-md-6">
@@ -153,11 +182,11 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-6" style="display: grid;
-                            grid-template-columns: 100px 100px 100px 100px;
-                            grid-template-rows: repeat(4,1fr);
-                            justify-items: center;
-                            justify-content: center;
-                            gap: 1rem;">
+                                        grid-template-columns: 100px 100px 100px 100px;
+                                        grid-template-rows: repeat(4,1fr);
+                                        justify-items: center;
+                                        justify-content: center;
+                                        gap: 1rem;">
                                     <!-- <div class="row col-md-12" > -->
                                     <div class="col-md-3">
                                         <button id="0" onclick="flip(0)" class="btn btn-success"
@@ -255,41 +284,47 @@
                         </div>
                         <script src="../Js/adivina.js"></script>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12 text-white">
-                        <main class="game">
-                            <div class="title">
-                                <h1>Pregunta de modulo 1</h1>
-                            </div>
-                            <!-- Start button -->
-                            <div class="start" id="start-panel">
-                                <button id="start" onclick="startGame()">JUGAR</button>
-                            </div>
-                            <!-- Game init -->
-                            <section class="game-panel" id="game-panel">
-                                <h3 id="pregunta">¿Cuál es la pregunta?</h3>
-                                <div>
-                                    <img id="imgPreg" src="../Asset/tablero.jpg" style="width: 300px; height: 300px;" alt="">
-                                </div>
-                                <ul class="alternatives">
-                                    <div id="alt1" onclick="probarAlt(0)">Alternativa 1</div>
-                                    <div id="alt2" onclick="probarAlt(1)">Alternativa 2</div>
-                                    <div id="alt3" onclick="probarAlt(2)">Alternativa 2</div>
-                                </ul>
-                            </section>
-                            <!-- Finish Game -->
-                            <section class="results" id="end-panel">
-                                <h3 id="respuestasBien">Respuestas bien: 3</h3>
-                                <h3 id="respuestasMal">Respuestas mal: 2</h3>
-                            </section>
-                        </main>
-                    </div>
-                </div>
-            </div>
-        </div>
+                </main>
+        
     </div>
-    <div class="row">
+    <div class="row" style="margin: 1% 10%;">
+        <main class="d-flex align-items-center  justify-content-center modal-content p-4 rounded-4 shadow "
+                    style="background-image: url(../Asset/fondotabla.png); min-width: 400px; margin-bottom: 20px;">
+                    <div class="col-md-12">
+                        <div class="col-md-12" style="color: rgb(21, 241, 241);">
+                            <main class="game">
+                                <div class="title">
+                                    <h1>Pregunta de modulo 1</h1>
+                                </div>
+                                <!-- Start button -->
+                                <div class="start" id="start-panel">
+                                    <button id="start" onclick="startGame()">JUGAR</button>
+                                </div>
+                                <!-- Game init -->
+                                <section class="game-panel" id="game-panel">
+                                    <h3 id="pregunta">¿Cuál es la pregunta?</h3>
+                                    <div>
+                                        
+                                    </div>
+                                    <ul class="alternatives">
+                                        <div id="alt1" onclick="probarAlt(0)">Alternativa 1</div>
+                                        <div id="alt2" onclick="probarAlt(1)">Alternativa 2</div>
+                                        <div id="alt3" onclick="probarAlt(2)">Alternativa 2</div>
+                                    </ul>
+                                </section>
+                                <!-- Finish Game -->
+                                <section class="results" id="end-panel">
+                                    <h3 id="respuestasBien">Respuestas bien: 3</h3>
+                                    <h3 id="respuestasMal">Respuestas mal: 2</h3>
+                                </section>
+                            </main>
+                        </div>
+
+                    </div>
+                </main>
+    </div>
+    
+    <div class="row" style="margin: 1% 10%;">
         <div class="col-md-4 text-white">
             <h3>
                 ATRAS
@@ -303,7 +338,7 @@
             </h3>
         </div>
     </div>
-<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js"></script>
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js"></script>
     <script src="../node_modules/jquery/dist/jquery.min.js"></script>
     <script src="../node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
     <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -311,4 +346,5 @@
     <script src="../Js/quest.js"></script>
     <script src="../Js/prevenir.js"></script>
 </body>
+
 </html>
