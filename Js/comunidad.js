@@ -1,7 +1,9 @@
 window.addEventListener('load', () => {
     const usuarioSesion = sessionStorage.getItem('usuario') || null;
     const usuario = JSON.parse(usuarioSesion);
-    mostrarChat(usuario.usuario)
+
+    mostrarChat(usuario.usuario);
+
     enviarMensaje(usuario.usuario)
 })
 
@@ -27,6 +29,7 @@ const mostrarChat = async ( userName ) => {
     for (let i = 0; i < json.data.length; i++) {
 
         let component = ''
+        const chatContainer = document.getElementById('chats-container')
 
         if (json.data[i].usuario == userName) {
             component = `
@@ -60,9 +63,13 @@ const mostrarChat = async ( userName ) => {
             `
         }
 
+        chatContainer.innerHTML += component
+        chatContainer.scrollTop = chatContainer.scrollHeight;
 
-        document.getElementById('chats-container').innerHTML += component
+        
     }
+
+   
 
 }
 
@@ -71,7 +78,9 @@ const mostrarChat = async ( userName ) => {
 const enviarMensaje = async ( userName ) => {
     document.getElementById('send-message-button').addEventListener('click', async () => {
         
-        const message = document.getElementById('box-message').value
+        const messageContainer = document.getElementById('box-message')
+
+        const message = messageContainer.value
 
         const API_URL = "http://13.59.147.125:8080/api/procedure"
         const body = {
@@ -91,7 +100,9 @@ const enviarMensaje = async ( userName ) => {
         const json = await response.json();
 
         if (json.data.mensaje_enviado != 0) {
-            window.location.href = './comunidad.html'
+            console.log('Envié el mensaje')
+            messageContainer.value = ''
+            mostrarChat(userName)
         } else {
             console.log('No envié el mensaje')
         }
