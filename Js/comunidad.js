@@ -1,8 +1,8 @@
 window.addEventListener('load', () => {
     const usuarioSesion = sessionStorage.getItem('usuario') || null;
     const usuario = JSON.parse(usuarioSesion);
-    console.log(usuario.usuario)
-    console.log(mostrarChat(usuario.usuario))
+    mostrarChat(usuario.usuario)
+    enviarMensaje(usuario.usuario)
 })
 
 
@@ -64,4 +64,38 @@ const mostrarChat = async ( userName ) => {
         document.getElementById('chats-container').innerHTML += component
     }
 
+}
+
+
+
+const enviarMensaje = async ( userName ) => {
+    document.getElementById('send-message-button').addEventListener('click', async () => {
+        
+        const message = document.getElementById('box-message').value
+
+        const API_URL = "http://13.59.147.125:8080/api/procedure"
+        const body = {
+            "procedure": "{ CALL pnj.SP_PNJ_REGISTRO_MENSAJE(?,?) }",
+            "params": [message, userName]
+        }
+
+        const response = await fetch(API_URL, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'mode': 'cors'
+            },
+            body: JSON.stringify(body)
+        })
+
+        const json = await response.json();
+
+        if (json.data.mensaje_enviado != 0) {
+            window.location.href = './comunidad.html'
+        } else {
+            console.log('No envié el mensaje')
+        }
+
+        
+    })
 }
