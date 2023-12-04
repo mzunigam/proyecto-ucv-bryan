@@ -37,6 +37,7 @@ class Nav extends HTMLElement {
               aria-expanded="false">Usuario</a>
                 <ul class="dropdown-menu " data-bs-popper="static">
                   <li><a class="dropdown-item" id="iniciarSesion" href="./login.html">Iniciar Sesion</a></li>
+                  <li><a class="dropdown-item" id="perfil" href="./perfil.html" aria-expanded="false">Perfil</a></li>
                   <li><a class="dropdown-item" href="./miscursos.html">Mis Cursos</a></li>
                   <li><a class="dropdown-item" href="#">Mis Notas</a></li>
                   <li><a class="dropdown-item" href="./matricula.html">Matricula</a></li>

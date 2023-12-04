@@ -4,6 +4,7 @@ window.addEventListener('load', () => {
 
     if(!usuario){
         //window.location.href = './login.html'
+        document.getElementById('perfil').style.display = 'none';
     }else{
         document.getElementById('nombreUsuario').textContent =  usuario.usuario;
         document.getElementById('iniciarSesion').style.display = 'none';
