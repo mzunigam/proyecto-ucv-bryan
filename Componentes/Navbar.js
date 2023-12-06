@@ -18,16 +18,13 @@ class Nav extends HTMLElement {
               <li class="nav-item">
                 <a class="nav-link" href="./comunidad.html">Comunidad</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Ranking</a>
-              </li>
+    
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"
                   aria-expanded="false">Multimedia</a>
                 <ul class="dropdown-menu " data-bs-popper="static">
                   <li><a class="dropdown-item" href="./juegos.html">Juegos</a></li>
-                  <li><a class="dropdown-item" href="#">Videos</a></li>
-                  <li><a class="dropdown-item" href="#">Album</a></li>
+
                 </ul>
               </li>
             </ul>
