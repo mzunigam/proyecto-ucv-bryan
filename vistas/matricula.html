@@ -63,52 +63,44 @@
         style="margin: 1% 10%;">
         <main class="d-flex align-items-center  justify-content-center modal-content p-4 rounded-4 shadow"
             style="background-image: url(../Asset/fondotabla.png); min-width: 400px;">
-            <div class="d-flex align-items-center justify-content-center m-2">
+            <div class="d-flex align-items-center  m-2">
                 <h3 class="text-[3rem] text-white ">VISTA DE ID - NOMBRE</h3>
             </div>
-            <div class="mt-[3rem] bg-[#3b384d] w-max">
-                <table class="table-auto w-[39rem] text-[1rem]">
-                    <thead class="text-xs font-semibold uppercase text-gray-400 bg-[#1f2937]">
-                        <tr>
-                            <th class="p-2">
-                                <div class="d-flex align-items-center justify-content-center m-2 text-white">ID CICLO</div>
-                            </th>
-                            <th class="p-2">
-                                <div class=" text-[3rem] text-white">ID COLEGIO</div>
-                            </th>
-                            <th class="p-2">
-                                <div class=" text-white">ID SUPERVISOR</div>
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody class="divide-y divide-[#2f2c3d] text-white">
-                        <tr>
-                            <td class="p-2">
-                                <div class="text-center">1 - CICLO II 2023</div>
-                            </td>
-                            <td class="p-2">
-                                <div class="text-left">1 - Carlos Noriega Jimenez</div>
-                            </td>
-                            <td class="p-2">
-                                <div class="text-left text-green-300 text-[0.88rem]">1 - Juan Guillen Bernez</div>
-                            </td>
-                        </tr>
-                    </tbody>
-                    <tbody class="divide-y divide-[#2f2c3d] text-white">
-                        <tr>
-                            <td class="p-2">
-                                <div class="text-center">2 - CICLO I 2024</div>
-                            </td>
-                            <td class="p-2">
-                                <div class="text-left">2 -  El Bosque</div>
-                            </td>
-                            <td class="p-2">
-                                <div class="text-left text-green-300 text-[0.88rem]">2 -  Paolo Zuniga Galves</div>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+            <table class="table-auto w-[39rem] text-[1rem]">
+                <thead class="text-xs font-semibold uppercase text-gray-400 bg-[#1f2937] ">
+                    <tr>
+                        <th >
+                            <div class="text-[3rem] text-white d-flex align-items-center  justify-content-center">CICLOS</div>
+                        </th>
+                        <th >
+                            <div class=" text-[3rem] text-white d-flex align-items-center  justify-content-center">COLEGIOS</div>
+                        </th>
+                        <th >
+                            <div class=" text-[3rem] text-white d-flex align-items-center  justify-content-center">SUPERVISORES</div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody class="text-xs font-semibold uppercase text-gray-400 bg-[#1f2937]">
+                    <tr>
+                        <td class=" text-[3rem] text-white p-2" id="ciclovista" >
+                            
+                                <!-- CICLOS -->
+                            
+                        </td>
+                        <td class=" text-[3rem] text-white p-2" id="colegiovista" >
+                            
+                                <!-- COLEGIOS -->
+                            
+                        </td>
+                        <td  class=" text-[3rem] text-white p-2" id="supervisorvista" >
+                            
+                                <!-- SUPERVISORES -->
+                            
+                        </td>
+                    </tr>
+                    
+                </tbody>
+            </table>
         </main>
     </div>
     </div>
@@ -118,6 +110,7 @@
     <script src="../main.js" type="module"></script>
     <script src="../Js/prevenir.js"></script>
     <script src="../Js/registroMatricula.js"></script>
+    <script src="../Js/vistascompletas.js"></script>
 </body>
 
 </html>

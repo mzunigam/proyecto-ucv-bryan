@@ -7,7 +7,7 @@ window.addEventListener('load', () => {
 
 
 const mostrarUsuario = async ( userName ) => {
- 
+
     const API_URL = "http://13.59.147.125:8080/api/procedure"
     const body = {
         "procedure": "{ CALL pnj.SP_PNJ_VISTA_USUARIO(?) }",
@@ -40,9 +40,15 @@ const mostrarUsuario = async ( userName ) => {
                                     </div>
                                 </td>
                                 <td class="p-2">
+                                <div class="form-floating">
+                                    <input type="password" class="form-control" id="passinput" placeholder="password">
+                                    <label for="password">Password</label>
+                                </div>
+                                </td>
+                                <td class="p-2">
                                     <div class="text-left text-green-300 text-[0.88rem]">
-                                        <button id="btn-pass" class="btn btn-outline-secondary" type="button"  style="border-color: white;
-                                        color: white; ">Cambiar</button>
+                                    <button id="btn-pass" class="btn btn-outline-secondary" style="border-color: white;
+                                    color: white; ">Cambiar</button>
                                         </div>
                                 </td>
                             <tr>
@@ -56,6 +62,12 @@ const mostrarUsuario = async ( userName ) => {
                                         ${json.data[0].nombre}
                         
                                     </div>
+                                </td>
+                                <td class="p-2">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="nombinput" placeholder="Nombre">
+                                            <label for="nombinput">Nombre</label>
+                                        </div>
                                 </td>
                                 <td class="p-2">
                                     <div class="text-left text-green-300 text-[0.88rem]">
@@ -77,6 +89,12 @@ const mostrarUsuario = async ( userName ) => {
                                     </div>
                                 </td>
                                 <td class="p-2">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="apeinput" placeholder="Apellido">
+                                            <label for="apeinput">Apellido</label>
+                                        </div>
+                                </td>
+                                <td class="p-2">
                                     <div class="text-left text-green-300 text-[0.88rem]">
                                         <button class="btn btn-outline-secondary" type="button"  style="border-color: white;
                                         color: white; ">Cambiar</button>
@@ -96,6 +114,12 @@ const mostrarUsuario = async ( userName ) => {
                                     </div>
                                 </td>
                                 <td class="p-2">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="correoinput" placeholder="Correo">
+                                            <label for="correoinput">Correo</label>
+                                        </div>
+                                </td>
+                                <td class="p-2">
                                     <div class="text-left text-green-300 text-[0.88rem]">
                                         <button class="btn btn-outline-secondary" type="button"  style="border-color: white;
                                         color: white; ">Cambiar</button>
@@ -113,6 +137,12 @@ const mostrarUsuario = async ( userName ) => {
                                     </div>
                                 </td>
                                 <td class="p-2">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="urlinput" placeholder="URL Perfil">
+                                            <label for="urlinput">URL Perfil</label>
+                                        </div>
+                                </td>
+                                <td class="p-2">
                                     <div class="text-left text-green-300 text-[0.88rem]">
                                         <button class="btn btn-outline-secondary" type="button"  style="border-color: white;
                                         color: white; ">Cambiar</button>
@@ -123,15 +153,19 @@ const mostrarUsuario = async ( userName ) => {
     `
 }
 
-const cambiarPass = async ( userId ) => {
-
-
-    const passC = document.getElementById('passC').value; //falta crear el input
+const cambiarPass = async ( idusuario ) => {
+    
+    
+    document.getElementById('btn-pass').addEventListener('click', async (event) => {
+        const button = event.currentTarget;
+        button.disabled = true;
+    
+        const passC = document.getElementById('passinput').value;
 
     const API_URL = "http://13.59.147.125:8080/api/procedure"
     const body = {
-        "procedure": "{ CALL pnj.SP_PNJ_VISTA_USUARIO(?,?) }",
-        "params": [userId, password]
+        "procedure": "{ CALL pnj.SP_PNJ_CAMBIAR_PASS_USUARIO(?,?) }",
+        "params": [idusuario, passC]
     }
 
     const response = await fetch(API_URL, {
@@ -142,17 +176,14 @@ const cambiarPass = async ( userId ) => {
         },
         body: JSON.stringify(body)
     });
-
-
-    if (response == 1){
-        alert('Contraseña cambiada correctamente')
-    } else {
-        alert('Error al cambiar contraseña')
+    button.disabled = false;
+    const json = await respuesta.json();
+    const existe_usuario = json?.data[0]?.existe_usuario || 0;
+    if(existe_usuario != 0){
+        alert('Registro Completado');
+    }else{
+        alert('Fallo al crear el Colegio');
     }
-
 }
-
-
-document.getElementById('btn-pass').addEventListener('click', () => {
-    document.getElementById('btn-pass')
-})
+);
+}
