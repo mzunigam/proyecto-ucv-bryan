@@ -4,7 +4,8 @@ window.addEventListener('load', () => {
     mostrarciclo();
     mostrarcolegio();
     mostrarsupervisor();
-    mostrarcursos()
+    mostrarcursos();
+    matricularCurso();
 })
 
 
@@ -130,12 +131,45 @@ const mostrarcursos = async () => {
                     <div class="text-left">${json.data[i].ciclo}<br>
                     Inicio: ${json.data[i].fecha_inicio}<br>Fin: ${json.data[i].fecha_fin}
                     </div>
-                        <button id="enviar" class="btn btn-outline-secondary" type="button" style="border-color: white;
+                        <button onclick="obtenerValores(this)" id="enviar" class="btn btn-outline-secondary" type="button" style="border-color: white;
                         color: white;">Registrarme</button>
                 </td>
             </tr>         
                 `
         chatContainer.innerHTML += component
         chatContainer.scrollTop = chatContainer.scrollHeight;
+    }
+}
+
+
+
+async function obtenerValores(btn) {
+    const fila = btn.parentNode.parentNode;
+
+    const idcurso = fila.cells[0].innerText;
+    const idusuario = JSON.parse(sessionStorage.getItem('usuario')).idusuario;
+
+    const API_URL = "http://13.59.147.125:8080/api/procedure"
+    const body = {
+        "procedure": "{ CALL pnj.SP_PNJ_REGISTRO_USU_CURSO(?,?) }",
+        "params": [idusuario, idcurso]
+    }
+
+    const response = await fetch(API_URL, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'mode': 'cors'
+        },
+        body: JSON.stringify(body)
+    });
+
+    const json = await response.json();
+
+    const existe_usucurso = json?.data[0]?.existe_usucurso || 0;
+    if (existe_usucurso == 0) {
+        alert('Registro Completado');
+    } else {
+        alert('Ya te encuentras Registrado');
     }
 }
