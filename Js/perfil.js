@@ -2,15 +2,15 @@ window.addEventListener('load', () => {
     const usuarioSesion = sessionStorage.getItem('usuario') || null;
     const usuario = JSON.parse(usuarioSesion);
     mostrarUsuario(usuario.usuario);
-    cambiarPass(usuario.idusuario);
-    cambiarnombre(usuario.idusuario);
-    cambiarapellido(usuario.idusuario);
-    cambiarcorreo(usuario.idusuario);
-    cambiarurl(usuario.idusuario);
+    cambiarPass(usuario.idusuario, usuario.usuario); //
+    cambiarnombre(usuario.idusuario, usuario.usuario);
+    cambiarapellido(usuario.idusuario, usuario.usuario);
+    cambiarcorreo(usuario.idusuario, usuario.usuario);
+    cambiarurl(usuario.idusuario, usuario.usuario);
 })
 
 
-const mostrarUsuario = async ( userName ) => {
+const mostrarUsuario = async (userName) => {
 
     const API_URL = "http://13.59.147.125:8080/api/procedure"
     const body = {
@@ -102,21 +102,21 @@ const mostrarUsuario = async ( userName ) => {
     `
 }
 
-    const cambiarPass = async ( idusuario ) => {
-        console.log(idusuario)
-        document.getElementById('btnPass').addEventListener('click', async (event) => {
+const cambiarPass = async (idusuario, userName) => {
+    console.log(idusuario)
+    document.getElementById('btnPass').addEventListener('click', async (event) => {
         const button = event.currentTarget;
         button.disabled = true;
-        
+
         const passC = document.getElementById('passinput').value;
-    
+
 
         const API_URL2 = "http://13.59.147.125:8080/api/procedure"
         const body1 = {
             "procedure": "{ CALL pnj.SP_PNJ_CAMBIAR_PASS_USUARIO(?,?) }",
-            "params": [idusuario,passC]
+            "params": [idusuario, passC]
         }
-    
+
         const respuesta = await fetch(API_URL2, {
             method: 'POST',
             headers: {
@@ -124,158 +124,163 @@ const mostrarUsuario = async ( userName ) => {
                 'mode': 'cors'
             },
             body: JSON.stringify(body1)
-        });    
+        });
 
-    button.disabled = false;
-    const json = await respuesta.json();
-    const existe_usuario = json?.data[0]?.existe_usuario || 0;
-    if(existe_usuario != 0){
-        alert('Registro Completado');
-        location.reload(true);
-    }else{
-        alert('Fallo en el registro');
+        button.disabled = false;
+        const json = await respuesta.json();
+        const existe_usuario = json?.data[0]?.existe_usuario || 0;
+        if (existe_usuario != 0) {
+            alert('Registro Completado');
+            document.getElementById('passinput').value = '';
+            mostrarUsuario(userName);
+        } else {
+            alert('Fallo en el registro');
+        }
     }
+    );
 }
-);
-}
-const cambiarnombre = async ( idusuario ) => {
+const cambiarnombre = async (idusuario, userName) => {
     document.getElementById('btnNomb').addEventListener('click', async (event) => {
-    const button = event.currentTarget;
-    button.disabled = true;
-    
-    const nombC = document.getElementById('nombreinput').value;
+        const button = event.currentTarget;
+        button.disabled = true;
+
+        const nombC = document.getElementById('nombreinput').value;
 
 
-    const API_URL2 = "http://13.59.147.125:8080/api/procedure"
-    const body1 = {
-        "procedure": "{ CALL pnj.SP_PNJ_CAMBIAR_NOMBRE_USUARIO(?,?) }",
-        "params": [idusuario,nombC]
+        const API_URL2 = "http://13.59.147.125:8080/api/procedure"
+        const body1 = {
+            "procedure": "{ CALL pnj.SP_PNJ_CAMBIAR_NOMBRE_USUARIO(?,?) }",
+            "params": [idusuario, nombC]
+        }
+
+        const respuesta = await fetch(API_URL2, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'mode': 'cors'
+            },
+            body: JSON.stringify(body1)
+        });
+
+        button.disabled = false;
+        const json = await respuesta.json();
+        const existe_usuario = json?.data[0]?.existe_usuario || 0;
+        if (existe_usuario != 0) {
+            alert('Registro Completado');
+            document.getElementById('nombreinput').value = '';
+            mostrarUsuario(userName);
+        } else {
+            alert('Fallo en el registro');
+        }
     }
-
-    const respuesta = await fetch(API_URL2, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'mode': 'cors'
-        },
-        body: JSON.stringify(body1)
-    });    
-
-button.disabled = false;
-const json = await respuesta.json();
-const existe_usuario = json?.data[0]?.existe_usuario || 0;
-if(existe_usuario != 0){
-    alert('Registro Completado');
-    location.reload(true);
-}else{
-    alert('Fallo en el registro');
+    );
 }
-}
-);
-}
-const cambiarapellido = async ( idusuario ) => {
+const cambiarapellido = async (idusuario, userName) => {
     document.getElementById('btnape').addEventListener('click', async (event) => {
-    const button = event.currentTarget;
-    button.disabled = true;
-    
-    const apeC = document.getElementById('apeinput').value;
+        const button = event.currentTarget;
+        button.disabled = true;
+
+        const apeC = document.getElementById('apeinput').value;
 
 
-    const API_URL2 = "http://13.59.147.125:8080/api/procedure"
-    const body1 = {
-        "procedure": "{ CALL pnj.SP_PNJ_CAMBIAR_APELLIDO_USUARIO(?,?) }",
-        "params": [idusuario,apeC]
+        const API_URL2 = "http://13.59.147.125:8080/api/procedure"
+        const body1 = {
+            "procedure": "{ CALL pnj.SP_PNJ_CAMBIAR_APELLIDO_USUARIO(?,?) }",
+            "params": [idusuario, apeC]
+        }
+
+        const respuesta = await fetch(API_URL2, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'mode': 'cors'
+            },
+            body: JSON.stringify(body1)
+        });
+
+        button.disabled = false;
+        const json = await respuesta.json();
+        const existe_usuario = json?.data[0]?.existe_usuario || 0;
+        if (existe_usuario != 0) {
+            alert('Registro Completado');
+            document.getElementById('apeinput').value = '';
+            mostrarUsuario(userName);
+        } else {
+            alert('Fallo en el registro');
+        }
     }
-
-    const respuesta = await fetch(API_URL2, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'mode': 'cors'
-        },
-        body: JSON.stringify(body1)
-    });    
-
-button.disabled = false;
-const json = await respuesta.json();
-const existe_usuario = json?.data[0]?.existe_usuario || 0;
-if(existe_usuario != 0){
-    alert('Registro Completado');
-    location.reload(true);
-}else{
-    alert('Fallo en el registro');
+    );
 }
-}
-);
-}
-const cambiarcorreo = async ( idusuario ) => {
+const cambiarcorreo = async (idusuario, userName) => {
     document.getElementById('btncorreo').addEventListener('click', async (event) => {
-    const button = event.currentTarget;
-    button.disabled = true;
-    
-    const correoC = document.getElementById('correoinput').value;
+        const button = event.currentTarget;
+        button.disabled = true;
+
+        const correoC = document.getElementById('correoinput').value;
 
 
-    const API_URL2 = "http://13.59.147.125:8080/api/procedure"
-    const body1 = {
-        "procedure": "{ CALL pnj.SP_PNJ_CAMBIAR_CORREO_USUARIO(?,?) }",
-        "params": [idusuario,correoC]
+        const API_URL2 = "http://13.59.147.125:8080/api/procedure"
+        const body1 = {
+            "procedure": "{ CALL pnj.SP_PNJ_CAMBIAR_CORREO_USUARIO(?,?) }",
+            "params": [idusuario, correoC]
+        }
+
+        const respuesta = await fetch(API_URL2, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'mode': 'cors'
+            },
+            body: JSON.stringify(body1)
+        });
+
+        button.disabled = false;
+        const json = await respuesta.json();
+        const existe_usuario = json?.data[0]?.existe_usuario || 0;
+        if (existe_usuario != 0) {
+            alert('Registro Completado');
+            document.getElementById('correoinput').value = '';
+            mostrarUsuario(userName);
+        } else {
+            alert('Fallo en el registro');
+        }
     }
-
-    const respuesta = await fetch(API_URL2, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'mode': 'cors'
-        },
-        body: JSON.stringify(body1)
-    });    
-
-button.disabled = false;
-const json = await respuesta.json();
-const existe_usuario = json?.data[0]?.existe_usuario || 0;
-if(existe_usuario != 0){
-    alert('Registro Completado');
-    location.reload(true);
-}else{
-    alert('Fallo en el registro');
-}
-}
-);
+    );
 }
 
-const cambiarurl = async ( idusuario ) => {
+const cambiarurl = async (idusuario, userName) => {
     document.getElementById('btnurl').addEventListener('click', async (event) => {
-    const button = event.currentTarget;
-    button.disabled = true;
-    
-    const urlC = document.getElementById('urlinput').value;
+        const button = event.currentTarget;
+        button.disabled = true;
+
+        const urlC = document.getElementById('urlinput').value;
 
 
-    const API_URL2 = "http://13.59.147.125:8080/api/procedure"
-    const body1 = {
-        "procedure": "{ CALL pnj.SP_PNJ_CAMBIAR_URL_USUARIO(?,?) }",
-        "params": [idusuario,urlC]
+        const API_URL2 = "http://13.59.147.125:8080/api/procedure"
+        const body1 = {
+            "procedure": "{ CALL pnj.SP_PNJ_CAMBIAR_URL_USUARIO(?,?) }",
+            "params": [idusuario, urlC]
+        }
+
+        const respuesta = await fetch(API_URL2, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'mode': 'cors'
+            },
+            body: JSON.stringify(body1)
+        });
+
+        button.disabled = false;
+        const json = await respuesta.json();
+        const existe_usuario = json?.data[0]?.existe_usuario || 0;
+        if (existe_usuario != 0) {
+            alert('Registro Completado');
+            document.getElementById('urlinput').value = '';
+            mostrarUsuario(userName);
+        } else {
+            alert('Fallo en el registro');
+        }
     }
-
-    const respuesta = await fetch(API_URL2, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'mode': 'cors'
-        },
-        body: JSON.stringify(body1)
-    });    
-
-button.disabled = false;
-const json = await respuesta.json();
-const existe_usuario = json?.data[0]?.existe_usuario || 0;
-if(existe_usuario != 0){
-    alert('Registro Completado');
-    location.reload(true);
-}else{
-    alert('Fallo en el registro');
-}
-}
-);
+    );
 }
