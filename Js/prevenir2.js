@@ -15,12 +15,12 @@ window.addEventListener('load', () => {
     }else{
         document.getElementById('nombreUsuario').textContent =  usuario.usuario;
         document.getElementById('iniciarSesion').style.display = 'none';
-        mostrarUsuario(usuario.usuario);
-        mostrar(usuario.usuario,usuario.id_tipousuario);
+        mostrarUsuario3(usuario.usuario);
+        mostrar2(usuario.usuario,usuario.id_tipousuario);
     }
     
 })
-const mostrarUsuario = async (userName) => {
+const mostrarUsuario3 = async (userName) => {
 
     const API_URL = "http://13.59.147.125:8080/api/procedure"
     const body = {
@@ -40,7 +40,7 @@ const mostrarUsuario = async (userName) => {
     const json = await response.json();
 
 }
-const mostrar =  (xusuario,tipousuario) => {
+const mostrar2 =  (xusuario,tipousuario) => {
     console.log('me ejecute')
     if (tipousuario == 1) {
         
