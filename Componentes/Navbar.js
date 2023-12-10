@@ -35,12 +35,12 @@ class Nav extends HTMLElement {
                 <ul class="dropdown-menu " data-bs-popper="static">
                   <li><a class="dropdown-item" id="iniciarSesion" href="./login.html">Iniciar Sesion</a></li>
                   <li><a class="dropdown-item" id="perfil" href="./perfil.html" aria-expanded="false">Perfil</a></li>
-                  <li><a class="dropdown-item" href="./miscursos.html">Mis Cursos</a></li>
-                  <li><a class="dropdown-item" href="#">Mis Notas</a></li>
-                  <li><a class="dropdown-item" href="./matricula.html">Matricula</a></li>
-                  <li><a class="dropdown-item" href="./colegio.html">Colegio</a></li>
-                  <li><a class="dropdown-item" href="./supervisor.html">Supervisor</a></li>
-                  <li><a class="dropdown-item" href="./ciclo.html">Ciclo</a></li>
+                  <li><a class="dropdown-item" id="miscursos2" href="./miscursos.html" aria-expanded="false">Mis Cursos</a></li>
+
+                  <li><a class="dropdown-item" id="matricula2" href="./matricula.html" aria-expanded="false">Matricula</a></li>
+                  <li><a class="dropdown-item" id="colegio2" href="./colegio.html" aria-expanded="false">Colegio</a></li>
+                  <li><a class="dropdown-item" id="supervisor2" href="./supervisor.html" aria-expanded="false">Supervisor</a></li>
+                  <li><a class="dropdown-item" id="ciclo2" href="./ciclo.html" aria-expanded="false">Ciclo</a></li>
                 </ul>
               </li>
             </ul>
