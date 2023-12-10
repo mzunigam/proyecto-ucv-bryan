@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../CSS/cards.css">
+    <link rel="stylesheet" href="../CSS/navbar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="../CSS/juego2.css">
+    <script src="https://kit.fontawesome.com/718ce1d33d.js" crossorigin="anonymous"></script>
+    <title>CNJ</title>
+</head>
+
+<body style="background-image: url(../Asset/fondocursos.png);">
+    <div class="row" style="
+            position: sticky;
+            top: 0;
+            z-index: 999;">
+        <div class="col-md-12">
+            <!-- usar el nav del nav.js -->
+            <nav-bar />
+            <script src="../Componentes/Navbar.js"></script>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row" style="margin: 1% 10%;">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-12" style="margin-top: 15px;">
+                        <h3 class="text-center " style="color:rgb(2, 75, 8)">
+                            IMPLEMENTOS
+                        </h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row" >
+                        <div class="col-md-12">
+                            <h3 class="text-center" style="color:rgb(255, 255, 255)">
+
+                            </h3>
+
+                            <main
+                                class="d-flex align-items-center  justify-content-center modal-content p-4 rounded-4 shadow"
+                                style="background-image: url(../Asset/fondotabla.png); min-width: 400px; margin-bottom: 20px;">
+                                <div class="col-md-12">
+                                    <h3 class="text-center text-primary text-white">
+                                        Para poder realizar una instalacion eléctrica, se es necesario instrumentos y
+                                        materiales.<br>
+                                        En este módulo se explicará los materiales que se necesitan y los instrumentos
+                                        con que contar.
+                                        Las herramientas son instrumentos, por lo general, de hierro o acero y son
+                                        empleadas en la realización de trabajos.<br>
+                                        Las herramientas del electricista deben tener unos mangos o brazos bien aislados
+                                        para soportar 600 voltios, y en tamaños adecuados que permitan hacer las
+                                        operaciones principales.<br><br>
+                                        <a style="color: rgb(255, 255, 255);"
+                                            class=" text-decoration-none d-inline-block w-100">Alicate</a>
+                                    </h3>
+                                    <div>
+                                        <div class="col-md-12">
+                                            <model-viewer style="position: relative;
+                                            width: 100%;
+                                            height: 50vh;" src="../Asset/complementos/3d/alicate/ALICATE.glb" ar
+                                                ar-modes="webxr scene-viewer quick-look" camera-controls
+                                                poster="../Asset/complementos/3d/alicate/poster.webp"
+                                                shadow-intensity="1">
+                                                <div class="progress-bar hide" slot="progress-bar">
+                                                    <div class="update-bar">
+                                                    </div>
+                                                </div>
+                                                <button slot="ar-button" id="ar-button">
+                                                    View in your space
+                                                </button>
+                                            </model-viewer>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="col-md-12">
+                                            <h3 class="text-center text-primary text-white">
+                                                <a style="color: rgb(255, 255, 255);"
+                                                    class=" text-decoration-none d-inline-block w-100">Destornillador</a>
+                                            </h3>
+                                            <model-viewer style="position: relative;
+                                            width: 100%;
+                                            height: 50vh;" src="../Asset/complementos/3d/destor/DESTORNILLADOR.glb" ar
+                                                ar-modes="webxr scene-viewer quick-look" camera-controls
+                                                poster="../Asset/complementos/3d/destor/poster.webp"
+                                                shadow-intensity="1">
+                                                <div class="progress-bar hide" slot="progress-bar">
+                                                    <div class="update-bar"></div>
+                                                </div>
+                                                <button slot="ar-button" id="ar-button">
+                                                    View in your space
+                                                </button>
+                                            </model-viewer>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12"  >
+                                        <h3 class="text-center" style="color:rgb(255, 255, 255)">
+                                            Foco
+                                        </h3>
+                                        <h4 class="text-center" style="color:rgb(255, 255, 255)">Principalmente se usan para iluminar instalaciones deportivas, alumbrado ornamental de edificios emblemáticos, publicidad y seguridad.</h4>
+                                        <model-viewer style="position: relative;
+                                        width: 100%;
+                                        height: 50vh;" src="../Asset/complementos/3d/foco/lightbulb_low-poly.glb" ar
+                                            ar-modes="scene-viewer webxr quick-look" camera-controls
+                                            poster="../Asset/complementos/3d/foco/poster.webp" shadow-intensity="1" auto-rotate>
+                                            <div class="progress-bar hide" slot="progress-bar">
+                                                <div class="update-bar"></div>
+                                            </div>
+                                            <button slot="ar-button" id="ar-button">
+                                                View in your space
+                                            </button>
+                                        </model-viewer>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <h3 class="text-center" style="color:rgb(255, 255, 255)">
+                                            INTERRUPTORES
+                                        </h3>
+                                        <h4 class="text-center" style="color:rgb(255, 255, 255)">Los tomacorrientes simples son dispositivos utilizados para establecer una conexión eléctrica de tipo universal, desde una clavija.</h4>
+                                        <model-viewer style="position: relative;
+                                                    width: 100%;
+                                                    height: 50vh;"
+                                            src="../Asset/complementos/3d/tomacorriente/tomacorriente_doble_vive.glb" ar
+                                            ar-modes="scene-viewer webxr quick-look" camera-controls
+                                            poster="../Asset/complementos/3d/tomacorriente/poster.webp" shadow-intensity="1" auto-rotate>
+                                            <div class="progress-bar hide" slot="progress-bar">
+                                                <div class="update-bar"></div>
+                                            </div>
+                                            <button slot="ar-button" id="ar-button">
+                                                View in your space
+                                            </button>
+                    
+                                        </model-viewer>
+                                    </div>
+                                    <div>
+                                        <div class="col-md-12">
+                                            <h3 class="text-center" style="color:rgb(255, 255, 255)">
+                                                CABLES </h3>
+                                                <h4 class="text-center" style="color:rgb(255, 255, 255)">Para una correcta instalacion, es necesario que los cables puedan ser distinguidos según sus colores para poder diferenciarlos cuando se arme el circuito.Cables paralelos flexibles de cobre, útiles para conexiones de electrodomésticos, extensiones, conexiones colgantes y en general como cables portátiles que no esten sometidos a condiciones pesadas de trabajo.</h4>
+                                                
+                                        </div>
+                                        <div class="model-viewer">
+                                            <model-viewer style="position: relative;
+                                                        width: 100%;
+                                                        height: 50vh;" src="../Asset/complementos/3d/cables/bunch_of_electric_wires.glb" ar
+                                                ar-modes="scene-viewer webxr quick-look" camera-controls
+                                                poster="../Asset/complementos/3d/cables/poster.webp" shadow-intensity="1" auto-rotate>
+                                                <div class="progress-bar hide" slot="progress-bar">
+                                                    <div class="update-bar"></div>
+                                                </div>
+                                                <button slot="ar-button" id="ar-button">
+                                                    View in your space
+                                                </button>
+                                            </model-viewer>
+                                        </div>
+                                    </div>
+                            </main>
+                        </div>
+                    </div>
+                </div>
+            </div>           
+</div>
+        </div>
+
+    
+    <div class="row" style="margin: 1% 10%;">
+        <main class="d-flex align-items-center  justify-content-center modal-content p-4 rounded-4 shadow "
+                    style="background-image: url(../Asset/fondotabla.png); min-width: 400px; margin-bottom: 20px;">
+                    <div class="col-md-12 text-white">
+                        <div class="col-md-12">
+                            <div class="col-md-6">
+                                <h2 class="text-center my-4 ms-4" style="color:rgb(43, 230, 43)">
+                                    Juego de memoria
+                                </h2>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6" style="display: grid;
+                                        grid-template-columns: 100px 100px 100px 100px;
+                                        grid-template-rows: repeat(4,1fr);
+                                        justify-items: center;
+                                        justify-content: center;
+                                        gap: 1rem;">
+                                    <!-- <div class="row col-md-12" > -->
+                                    <div class="col-md-3">
+                                        <button id="0" onclick="flip(0)" class="btn btn-success"
+                                            style="width: 100px; height: 100px;"></button>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <button id="1" onclick="flip(1)" class="btn btn-success"
+                                            style="width: 100px; height: 100px;"></button>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <button id="2" onclick="flip(2)" class="btn btn-success"
+                                            style="width: 100px; height: 100px;"></button>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <button id="3" onclick="flip(3)" class="btn btn-success"
+                                            style="width: 100px; height: 100px;"></button>
+                                    </div>
+                                    <!-- </div> -->
+                                    <!-- <div class="row col-md-12"> -->
+                                    <div class="col-md-3">
+                                        <button id="4" onclick="flip(4)" class="btn btn-success"
+                                            style="width: 100px; height: 100px;"></button>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <button id="5" onclick="flip(5)" class="btn btn-success"
+                                            style="width: 100px; height: 100px;"></button>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <button id="6" onclick="flip(6)" class="btn btn-success"
+                                            style="width: 100px; height: 100px;"></button>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <button id="7" onclick="flip(7)" class="btn btn-success"
+                                            style="width: 100px; height: 100px;"></button>
+                                    </div>
+                                    <!-- </div> -->
+                                    <!-- <div class="row col-md-12"> -->
+                                    <div class="col-md-3">
+                                        <button id="8" onclick="flip(8)" class="btn btn-success"
+                                            style="width: 100px; height: 100px;"></button>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <button id="9" onclick="flip(9)" class="btn btn-success"
+                                            style="width: 100px; height: 100px;"></button>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <button id="10" onclick="flip(10)" class="btn btn-success"
+                                            style="width: 100px; height: 100px;"></button>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <button id="11" onclick="flip(11)" class="btn btn-success"
+                                            style="width: 100px; height: 100px;"></button>
+                                    </div>
+                                    <!-- </div> -->
+                                    <!-- <div class="row col-md-12"> -->
+                                    <div class="col-md-3">
+                                        <button id="12" onclick="flip(12)" class="btn btn-success"
+                                            style="width: 100px; height: 100px;"></button>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <button id="13" onclick="flip(13)" class="btn btn-success"
+                                            style="width: 100px; height: 100px;"></button>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <button id="14" onclick="flip(14)" class="btn btn-success"
+                                            style="width: 100px; height: 100px;"></button>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <button id="15" onclick="flip(15)" class="btn btn-success"
+                                            style="width: 100px; height: 100px;"></button>
+                                    </div>
+                                    <!-- </div> -->
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h3> <i class="fa fa-bug" aria-hidden="true"></i> <span id="showSuccesses">Aciertos:
+                                                    0</span></h3>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h3><i class="far fa-clock"></i> <span id="showTime">Tiempo restante:<br>30
+                                                    segundos</span></h3>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h3><i class="fas fa-crown"></i> <span id="movements">Movimientos: 0</span></h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <script src="../Js/adivina.js"></script>
+                            </div>
+                        </div>
+                        <script src="../Js/adivina.js"></script>
+                    </div>
+                </main>
+        
+    </div>
+    <div class="row" style="margin: 1% 10%;">
+        <main class="d-flex align-items-center  justify-content-center modal-content p-4 rounded-4 shadow "
+                    style="background-image: url(../Asset/fondotabla.png); min-width: 400px; margin-bottom: 20px;">
+                    <div class="col-md-12">
+                        <div class="col-md-12" style="color: rgb(21, 241, 241);">
+                            <main class="game">
+                                <div class="title">
+                                    <h1>Pregunta de modulo 1</h1>
+                                </div>
+                                <!-- Start button -->
+                                <div class="start" id="start-panel">
+                                    <button id="start" onclick="startGame()">JUGAR</button>
+                                </div>
+                                <!-- Game init -->
+                                <section class="game-panel" id="game-panel">
+                                    <h3 id="pregunta">¿Cuál es la pregunta?</h3>
+                                    <div>
+                                        
+                                    </div>
+                                    <ul class="alternatives">
+                                        <div id="alt1" onclick="probarAlt(0)">Alternativa 1</div>
+                                        <div id="alt2" onclick="probarAlt(1)">Alternativa 2</div>
+                                        <div id="alt3" onclick="probarAlt(2)">Alternativa 2</div>
+                                    </ul>
+                                </section>
+                                <!-- Finish Game -->
+                                <section class="results" id="end-panel">
+                                    <h3 id="respuestasBien">Respuestas bien: 3</h3>
+                                    <h3 id="respuestasMal">Respuestas mal: 2</h3>
+                                </section>
+                            </main>
+                        </div>
+
+                    </div>
+                </main>
+    </div>
+    
+    <div class="row" style="margin: 1% 10%;">
+        <div class="col-md-4 text-white">
+            <div class="col-md-4 text-white">
+                <a href="./modulo.html" id="terminar" class="btn btn-outline-secondary " type="button" style="border-color: white;
+                            color: rgb(0, 0, 0);">INICIO</a>
+            </div>
+        </div>
+        <div class="col-md-4 text-white">
+        </div>
+        <div class="col-md-4 text-white">
+            <a href="./contenido5.html" id="terminar" class="btn btn-outline-secondary " type="button" style="border-color: white;
+                        color: rgb(0, 0, 0);">Completar</a>
+        </div>
+    </div>
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js"></script>
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../main.js" type="module"></script>
+    <script src="../Js/quest.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="../Js/prevenir.js"></script>
+</body>
+
+</html>
