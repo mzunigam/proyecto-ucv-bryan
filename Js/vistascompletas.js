@@ -89,9 +89,42 @@ const mostrarcolegio = async () => {
     for (let i = 0; i < json.data.length; i++) {
         const chatContainer = document.getElementById('colegiovista')
         component = `
-                                    <div class="text-left">
-                                    ${json.data[i].idcolegio}  -  ${json.data[i].colegio}  
-                                    </div>         
+                                    
+                                <tr>
+                                    <td class="p-2">
+                                        <div class="text-left col-12">
+                                            ${json.data[i].idcolegio}
+                                        </div>
+                                    </td>
+                                    <td class="p-2">
+                                        <div class="text-left col-12">
+                                            ${json.data[i].colegio} 
+                                        </div>
+                                    </td>
+                                    <td class="p-2">
+                                        <div class="text-left col-12">
+                                            ${json.data[i].ubicacion} 
+                                        </div>
+                                    </td>
+                                    <td class="p-2">
+                                        <div class="text-left col-12">
+                                            ${json.data[i].distrito} 
+                                        </div>
+                                    </td>
+                                    <td class="p-2">
+                                        <div class="text-left col-12">
+                                            ${json.data[i].departamento} 
+                                        </div>
+                                    </td>
+                                    <td class="p-2">
+                                        <button onclick="showModifyColegio(this)" id="btnModifyColegio" class="btn btn-outline-secondary" style="margin-bottom: 10px;border-color: white;
+                                        color: white; ">Modificar</button>
+                                    </td>
+                                    <td class="p-2">
+                                        <button onclick="eliminarColegio(this)" id="btnDeleteColegio" class="btn btn-outline-secondary" style="margin-bottom: 10px;border-color: white;
+                                        color: white; ">Eliminar</button>
+                                    </td>
+                                </tr>         
     `
         chatContainer.innerHTML += component
         chatContainer.scrollTop = chatContainer.scrollHeight;

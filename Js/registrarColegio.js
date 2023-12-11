@@ -7,10 +7,10 @@ const botonRegistrarColegio = () => {
         const button = event.currentTarget;
         button.disabled = true;
 
-        const nombre = document.getElementById('nombreInput').value;
-        const ubicacion = document.getElementById('ubiInput').value;
-        const distrito = document.getElementById('distritoInput').value;
-        const departamento = document.getElementById('departamentoInput').value;
+        const colegio = document.getElementById('changeCole').value;
+        const ubicacion = document.getElementById('changeUbi').value;
+        const distrito = document.getElementById('changeDis').value;
+        const departamento = document.getElementById('changeDep').value;
 
         const respuesta = await fetch("http://13.59.147.125:8080/api/procedure",{
             method: 'POST',
@@ -20,7 +20,7 @@ const botonRegistrarColegio = () => {
             },
             body: JSON.stringify({
                 "procedure" : "{ CALL pnj.SP_PNJ_REGISTRO_COLEGIO(?,?,?,?) }",
-                "params" : [nombre,ubicacion,distrito,departamento]
+                "params" : [colegio,ubicacion,distrito,departamento]
             })
         });
         button.disabled = false;
@@ -29,20 +29,25 @@ const botonRegistrarColegio = () => {
         const existe_usuario = json?.data[0]?.existe_usuario || 0;
         if(existe_usuario != 0){
             alert('Registro Completado');
+            document.getElementById('changeCole').value = '';
+            document.getElementById('changeUbi').value = '';
+            document.getElementById('changeDis').value = '';
+            document.getElementById('changeDep').value = '';
         }else{
             alert('Fallo al crear el Colegio');
         }
     });
 }
 
-async function eliminarCole(btn) {
+const eliminarColegio = async (btn) => {
+    const fila1 = btn.parentNode.parentNode;
+
+    const idColegio = parseInt(fila1.cells[0].innerText);
 
     const API_URL = 'http://13.59.147.125:8080/api/procedure'
-    const idCole = parseInt(btn.parentNode.parentNode.cells[0].innerText)
-
     const body = {
         "procedure": "{ CALL pnj.SP_PNJ_ELIMINAR_COLEGIO(?) }",
-        "params": [idCole]
+        "params": [idColegio]
     }
 
     const response = await fetch(API_URL, {
@@ -65,29 +70,29 @@ async function eliminarCole(btn) {
 }
 
 
-function showModify(btn){
-    document.getElementById('modifyBox').classList.remove('d-none')
+const showModifyColegio = (btn) => {
+    document.getElementById('modifyBoxColegio').classList.remove('d-none');
     
-    const fila = btn.parentNode.parentNode;
-    const inputCole = document.getElementById('changeCole')
-    const inputubi = document.getElementById('changeUbi')
-    const inputdis = document.getElementById('changeDis')
-    const inputdep = document.getElementById('changeDep')
+    
+    const inputCole = document.getElementById('nombreColegio')
+    const inputubi = document.getElementById('ubicacionColegio')
+    const inputdis = document.getElementById('distritoColegio')
+    const inputdep = document.getElementById('departamentoColegio')
 
-    $('#sendModify').off('click').on('click', sendModify)
+    $('#sendModifyColegio').off('click').on('click', sendModifyCole)
 
-    async function sendModify(){
-        const idCole = parseInt(fila.cells[0].innerText)
-        const cole = inputCole.value == '' ? fila.cells[1].innerText : inputName.value;
-        const ubi = inputubi.value == '' ? fila.cells[2].innerText : inputName.value;
-        const dis = inputdis.value == '' ? fila.cells[3].innerText : inputName.value;
-        const dep = inputdep.value == '' ? fila.cells[4].innerText : inputName.value;
+    async function sendModifyCole(){
+        const idColegio = parseInt(btn.parentNode.parentNode.cells[0].innerText);
+        const colegio = inputCole.value == '' ? btn.parentNode.parentNode.cells[1].innerText     : inputCole.value;
+        const ubicacion = inputubi.value == '' ? btn.parentNode.parentNode.cells[2].innerText    : inputubi.value;
+        const distrito = inputdis.value == '' ? btn.parentNode.parentNode.cells[3].innerText     : inputdis.value;
+        const departamento = inputdep.value == '' ? btn.parentNode.parentNode.cells[4].innerText : inputdep.value;
 
         const API_URL = 'http://13.59.147.125:8080/api/procedure'
     
         const body = {
                 "procedure": "{ CALL pnj.SP_PNJ_CAMBIAR_COLEGIO(?,?,?,?,?) }",
-                "params": [idCole, cole, ubi, dis, dep]
+                "params": [idColegio, colegio, ubicacion,distrito,departamento]
             }
         const response = await fetch(API_URL, {
                 method: 'POST',

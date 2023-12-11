@@ -13,19 +13,20 @@
 </head>
 
 <body style="background-image: url(../Asset/fondocursos.png);" >
-   
+
     <div class="container-fluid" style="padding-left: 0px;
     padding-right: 0px; padding-top: 0px; padding-bottom: 15px;">
         <div class="row" style="
         position: sticky;
         top: 0;
         z-index: 999;">
-    <div class="col-md-12">
-         <!-- usar el nav del nav.js -->
-  <nav-bar/>
-  <script src="../Componentes/Navbar.js"></script>
+        <div class="col-md-12">
+            <!-- usar el nav del nav.js -->
+            <nav-bar/>
+          <script src="../Componentes/Navbar.js"></script>
+        </div>
     </div>
-</div>
+
         <div class="d-flex flex-column flex-md-row p-4 gap-4 py-md-5 align-items-center justify-content-center"
             style="margin: 1% 10%;">
             <main class="d-flex align-items-center  justify-content-center modal-content p-4 rounded-4 shadow"
@@ -36,48 +37,118 @@
                         <h1 class="h3 mb-3 fw-normal text-white">REGISTRO DE COLEGIO</h1>
                       </div>
                       <div class="form-floating">
-                        <input type="text" class="form-control" id="nombreInput" placeholder="Nombre del Colegio">
-                        <label for="nombreInput">Nombre del Colegio</label>
+                        <input type="text" class="form-control" id="changeCole" placeholder="Nombre del Colegio">
+                        <label for="changeCole">Nombre del Colegio</label>
                       </div>
                       <div class="form-floating">
-                        <input type="text" class="form-control" id="ubiInput" placeholder="Ubicacion">
-                        <label for="ubiInput">Ubicacion</label>
+                        <input type="text" class="form-control" id="changeUbi" placeholder="Ubicacion">
+                        <label for="changeUbi">Ubicacion</label>
                       </div>
                       <div class="form-floating">
-                        <input type="text" class="form-control" id="distritoInput" placeholder="Distrito">
-                        <label for="distritoInput">Distrito</label>
+                        <input type="text" class="form-control" id="changeDis" placeholder="Distrito">
+                        <label for="changeDis">Distrito</label>
                       </div>
                       <div class="form-floating">
-                        <input type="text" class="form-control" id="departamentoInput" placeholder="Departamento">
-                        <label for="departamentoInput">Departamento</label>
+                        <input type="text" class="form-control" id="changeDep" placeholder="Departamento">
+                        <label for="changeDep">Departamento</label>
                       </div>
                       <button id="btncolegio" class="btn btn-primary w-100 py-2" style="margin-bottom: 10px;">Registrar</button>
                     </div>
             </main>
         </div>
-        <div class="d-flex flex-column flex-md-row p-4 gap-4 py-md-5 align-items-center justify-content-center"
+
+    <div class="d-flex flex-column flex-md-row p-4 gap-4 py-md-2 align-items-center justify-content-center"
       style="margin: 1% 10%;">
       <main class="d-flex align-items-center  justify-content-center modal-content p-4 rounded-4 shadow"
         style="background-image: url(../Asset/fondotabla.png); min-width: 400px;">
         <table class="table-auto w-[39rem] text-[1rem]">
           <thead class="text-xs font-semibold uppercase text-gray-400 bg-[#1f2937]">
-              <tr>
-                  <th >
-                      <div class="text-[3rem] text-white d-flex align-items-center  justify-content-center ">COLEGIOS</div>
-                  </th>
-              </tr>
+            <tr>
+              <th>
+                <div class="text-[3rem] text-white d-flex align-items-center  justify-content-center ">COLEGIOS</div>
+              </th>
+            </tr>
           </thead>
           <tbody class="text-xs font-semibold uppercase text-gray-400 bg-[#1f2937]">
-              <tr>
-                  <td class=" text-[3rem] text-white p-2" id="colegiovista" >
-                      
-                          <!-- COLEGIOS -->
-                      
-                  </td>
-              </tr>
+            <tr>
+              <td class="text-[3rem] text-white p-2" id="">
+
+                <!-- COLEGIOS -->
+
+              </td>
+            </tr>
           </tbody>
-      </table>
+          <table class="table-auto w-[39rem] text-[1rem]">
+            <tbody class="divide-y divide-[#2f2c3d] text-white" id="colegiovista">
+              <thead class="text-xs font-semibold uppercase text-gray-400 bg-[#1f2937] text-white">
+                <td class="p-2">
+                  Id
+                </td>
+                <td class="p-2">
+                  colegio
+                </td>
+                <td class="p-2">
+                  Ubicacion
+                </td>
+                <td class="p-2">
+                  Distrito
+                </td>
+                <td class="p-2">
+                  Departamento
+                </td>
+              </thead>
+            </tbody>
+          </table>
+        </table>
       </main>
+    </div>
+    
+    <div class="d-flex d-none flex-column flex-md-row p-4 gap-4 py-md-2 align-items-center justify-content-center"
+      id="modifyBoxColegio" style="margin: 1% 10%;">
+      <main class="d-flex align-items-center  justify-content-center modal-content p-4 rounded-4 shadow"
+        style="background-image: url(../Asset/fondotabla.png); min-width: 400px;">
+        <table class="table-auto w-[39rem] text-[1rem]">
+          <thead class="text-xs font-semibold uppercase text-gray-400 bg-[#1f2937]">
+            <tr>
+              <th>
+                <div class="text-[3rem] text-white d-flex align-items-center  justify-content-center ">MODIFICAR</div>
+              </th>
+            </tr>
+          </thead>
+          <table class="table-auto w-[39rem] text-[1rem]">
+            <tbody class="divide-y divide-[#2f2c3d] text-white" id="">
+              <thead class="text-xs font-semibold uppercase text-gray-400 bg-[#1f2937] text-white">
+                <td class="p-2">
+                  <div class="form-floating">
+                    <input type="text" class="form-control" id="nombreColegio" placeholder="Nombre">
+                    <label for="changeCole" class="text-black">Colegio</label>
+                  </div>
+                </td>
+                <td class="p-2">
+                  <div class="form-floating">
+                    <input type="text" class="form-control" id="ubicacionColegio" placeholder="Nombre">
+                    <label for="changeUbi" class="text-black">Ubicacion</label>
+                  </div>
+                </td>
+                <td class="p-2">
+                  <div class="form-floating">
+                    <input type="text" class="form-control" id="distritoColegio" placeholder="Nombre">
+                    <label for="changeDis" class="text-black">Distrito</label>
+                  </div>
+                </td>
+                <td class="p-2">
+                  <div class="form-floating">
+                    <input type="text" class="form-control" id="departamentoColegio" placeholder="Nombre">
+                    <label for="changeDep" class="text-black">Departamento</label>
+                  </div>
+                </td>
+              </thead>
+            </tbody>
+          </table>
+        </table>
+        <p class="text-white">Nota: Los campos que se dejen en blanco serán ignorados.</p>
+        <button id="sendModifyColegio" class="btn btn-outline-secondary" type="button" style="border-color: white;
+                                        color: white; ">Cambiar</button>
     </div>
 
     </div>
