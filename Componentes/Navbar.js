@@ -37,7 +37,7 @@ class Nav extends HTMLElement {
               <li><a class="dropdown-item" id="colegio2" href="./colegio.html" aria-expanded="false">Colegio</a></li>
               <li><a class="dropdown-item" id="supervisor2" href="./supervisor.html" aria-expanded="false">Supervisor</a></li>
               <li><a class="dropdown-item" id="ciclo2" href="./ciclo.html" aria-expanded="false">Ciclo</a></li>
-              <li><a class="dropdown-item" id="cerrar" href="./index.html" aria-expanded="false" type="button">Cerrar Sesion</a></li>
+              <li><a class="dropdown-item" id="cerrarsesion" href="./index.html" aria-expanded="false" type="button">Cerrar Sesion</a></li>
             </ul>
           </li>
         </ul>

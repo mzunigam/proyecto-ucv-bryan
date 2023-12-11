@@ -4,7 +4,7 @@ window.addEventListener('load', () => {
 
 const cerrarsesion = () => {
     console.log('Me ejecute')
-    document.getElementById('cerrar').addEventListener('click', async (event) => {
+    document.getElementById('cerrarsesion').addEventListener('click', async (event) => {
         
         sessionStorage.clear();
         

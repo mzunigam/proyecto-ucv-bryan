@@ -11,11 +11,12 @@ window.addEventListener('load', () => {
         document.getElementById('colegio2').style.display = 'none';
         document.getElementById('supervisor2').style.display = 'none';
         document.getElementById('ciclo2').style.display = 'none';
-        document.getElementById('cerrar').style.display = 'none';
+        document.getElementById('cerrarsesion').style.display = 'none';
         
     }else{
         document.getElementById('nombreUsuario').textContent =  usuario.usuario;
         document.getElementById('iniciarSesion').style.display = 'none';
+        
         mostrarUsuario3(usuario.usuario);
         mostrar2(usuario.usuario,usuario.id_tipousuario);
     }
