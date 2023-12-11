@@ -99,7 +99,7 @@ const mostrarChat = async (userName) => {
                     <div class="chat__conversation-board__message__bubble"> <span> <a class=" text-decoration-none d-inline-block w-100 text-success text-end" href="#">${json.data[i].usuario}</a> <br>${json.data[i].texto}</span></div>
                 </div>
                 <div class="chat__conversation-board__message__options">
-                <span class="text-white"> <a class="text-white text-decoration-none " >${json.data[i].hora.substring(0,5)}</a> <br>${json.data[i].fecha}</span>
+                <span class="text-white" style="font-size: 9px"> <a class="text-white text-decoration-none "  >${json.data[i].hora.substring(0,5)}</a> <br>${json.data[i].fecha}</span>
                 </div>
                 </div>
             `
@@ -112,7 +112,7 @@ const mostrarChat = async (userName) => {
                     <div class="chat__conversation-board__message__bubble"> <span> <a class=" text-decoration-none d-inline-block w-100 text-success text-start" href="#">${json.data[i].usuario}</a> <br> ${json.data[i].texto}</span></div>
                 </div>
                 <div class="chat__conversation-board__message__options">
-                <span class="text-white"> <a class="text-white text-decoration-none" >${json.data[i].hora.substring(0,5)}</a> <br>${json.data[i].fecha}</span>
+                <span class="text-white" style="font-size: 9px"> <a class="text-white text-decoration-none"  >${json.data[i].hora.substring(0,5)}</a> <br>${json.data[i].fecha}</span>
                 </div>
                 </div> 
             `
