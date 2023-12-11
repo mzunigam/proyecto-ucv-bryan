@@ -5,7 +5,9 @@ window.addEventListener('load', () => {
     mostrarcolegio();
     mostrarsupervisor();
     mostrarcursos();
-    matricularCurso();
+    mostrarmatricula1();
+    mostrarmatricula2();
+    mostrarmatricula3();
 })
 
 
@@ -30,8 +32,6 @@ const mostrarciclo = async () => {
     for (let i = 0; i < json.data.length; i++) {
         const chatContainer = document.getElementById('ciclovista')
         component = ` 
-
-
                         <tr>
                             <td class="p-2">
                                 <div class="text-left col-12">
@@ -228,6 +228,7 @@ const mostrarcursos = async () => {
         chatContainer.innerHTML += component
         chatContainer.scrollTop = chatContainer.scrollHeight;
     }
+    return json
 }
 
 
@@ -261,6 +262,92 @@ async function registroUsuarioCurso(btn) {
     } else {
         alert('Ya te encuentras Registrado');
     }
+}
+
+
+const mostrarmatricula1 = async () => {
+
+    const API_URL = "http://13.59.147.125:8080/api/procedure"
+    const body = {
+        "procedure": "{ CALL pnj.SP_PNJ_VISTA_CICLO() }",
+        "params": []
+    }
+
+    const response = await fetch(API_URL, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'mode': 'cors'
+        },
+        body: JSON.stringify(body)
+    });
+
+    const json = await response.json();
+    for (let i = 0; i < json.data.length; i++) {
+        const chatContainer = document.getElementById('matriculaciclos')
+        component = `
+                    <td>${json.data[i].idciclo}: ${json.data[i].ciclo}<br></td>
+                `
+        chatContainer.innerHTML += component
+        chatContainer.scrollTop = chatContainer.scrollHeight;
+    }
+    return json
+}
+const mostrarmatricula2 = async () => {
+
+    const API_URL = "http://13.59.147.125:8080/api/procedure"
+    const body = {
+        "procedure": "{ CALL pnj.SP_PNJ_VISTA_COLEGIO() }",
+        "params": []
+    }
+
+    const response = await fetch(API_URL, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'mode': 'cors'
+        },
+        body: JSON.stringify(body)
+    });
+
+    const json = await response.json();
+    for (let i = 0; i < json.data.length; i++) {
+        const chatContainer = document.getElementById('matriculacolegios')
+        component = `
+                    <td>${json.data[i].idcolegio}: ${json.data[i].colegio}<br></td>
+                `
+        chatContainer.innerHTML += component
+        chatContainer.scrollTop = chatContainer.scrollHeight;
+    }
+    return json
+}
+const mostrarmatricula3 = async () => {
+
+    const API_URL = "http://13.59.147.125:8080/api/procedure"
+    const body = {
+        "procedure": "{ CALL pnj.SP_PNJ_VISTA_SUPERVISOR() }",
+        "params": []
+    }
+
+    const response = await fetch(API_URL, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'mode': 'cors'
+        },
+        body: JSON.stringify(body)
+    });
+
+    const json = await response.json();
+    for (let i = 0; i < json.data.length; i++) {
+        const chatContainer = document.getElementById('matriculasupervisores')
+        component = `
+                    <td>${json.data[i].idsupervisor}: ${json.data[i].nombre} ${json.data[i].apellido}<br></td>
+                `
+        chatContainer.innerHTML += component
+        chatContainer.scrollTop = chatContainer.scrollHeight;
+    }
+    return json
 }
 
 

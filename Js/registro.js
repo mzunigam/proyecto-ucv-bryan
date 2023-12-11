@@ -12,6 +12,8 @@ const botonRegis = () => {
         const nombre = document.getElementById('inputnombre').value;
         const apellido = document.getElementById('inputapellido').value;
         const correo = document.getElementById('inputcorreo').value;
+        const url = document.getElementById('inputurl').value;
+        
 
         const respuesta = await fetch("http://13.59.147.125:8080/api/procedure",{
             method: 'POST',
@@ -20,8 +22,8 @@ const botonRegis = () => {
                 'mode': 'cors'
             },
             body: JSON.stringify({
-                "procedure" : "{ CALL pnj.SP_PNJ_REGISTRO_USUARIO(?,?,?,?,?) }",
-                "params" : [usuario,password,nombre,apellido,correo]
+                "procedure" : "{ CALL pnj.SP_PNJ_REGISTRO_USUARIO(?,?,?,?,?,?) }",
+                "params" : [usuario,password,nombre,apellido,correo,url]
             })
         });
         button.disabled = false;
