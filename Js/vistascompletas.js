@@ -119,9 +119,33 @@ const mostrarsupervisor = async () => {
     for (let i = 0; i < json.data.length; i++) {
         const chatContainer = document.getElementById('supervisorvista')
         component = `
-                                    <div class="text-left">
-                                    ${json.data[i].idsupervisor}  -  ${json.data[i].nombre}  
-                                    </div>         
+
+
+                    <tr>
+                        <td class="p-2">
+                            <div class="text-left col-12">
+                                ${json.data[i].idsupervisor}
+                            </div>
+                        </td>
+                        <td class="p-2">
+                            <div class="text-left col-12">
+                                ${json.data[i].nombre} 
+                            </div>
+                        </td>
+                        <td class="p-2">
+                            <div class="text-left col-12">
+                                ${json.data[i].apellido} 
+                            </div>
+                        </td>
+                        <td class="p-2">
+                            <button onclick="showModifySupervisor(this)" id="btnModifySupervisor" class="btn btn-outline-secondary" style="margin-bottom: 10px;border-color: white;
+                            color: white; ">Modificar</button>
+                        </td>
+                        <td class="p-2">
+                            <button onclick="eliminarSupervisor(this)" id="btnDeleteSupervisor" class="btn btn-outline-secondary" style="margin-bottom: 10px;border-color: white;
+                            color: white; ">Eliminar</button>
+                        </td>
+                    </tr>      
     `
         chatContainer.innerHTML += component
         chatContainer.scrollTop = chatContainer.scrollHeight;

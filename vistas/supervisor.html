@@ -1,83 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="./vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="../CSS/navbar.css">
-    <title>CNJ</title>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="./vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../CSS/navbar.css">
+  <title>CNJ</title>
 </head>
 
-<body style="background-image: url(../Asset/fondocursos.png);" >
-   
-    <div class="container-fluid" style="padding-left: 0px;
+<body style="background-image: url(../Asset/fondocursos.png);">
+
+  <div class="container-fluid" style="padding-left: 0px;
     padding-right: 0px; padding-top: 0px; padding-bottom: 15px;">
-        <div class="row" style="
+    <div class="row" style="
         position: sticky;
         top: 0;
         z-index: 999;">
-    <div class="col-md-12">
-         <!-- usar el nav del nav.js -->
-  <nav-bar/>
-  <script src="../Componentes/Navbar.js"></script>
+      <div class="col-md-12">
+        <!-- usar el nav del nav.js -->
+        <nav-bar />
+        <script src="../Componentes/Navbar.js"></script>
+      </div>
     </div>
-</div>
-        <div class="d-flex flex-column flex-md-row p-4 gap-4 py-md-5 align-items-center justify-content-center"
-            style="margin: 1% 10%;">
-            <main class="d-flex align-items-center  justify-content-center modal-content p-4 rounded-4 shadow"
-                style="background-image: url(../Asset/fondotabla.png); min-width: 400px;">
-                    <div>
-                      <div style="text-align: center;">
-                        <img class="mb-4" src="../Asset/Icon/supervisor.png" alt="" style="WIDTH: 150px;height: 170px;">
-                        <h1 class="h3 mb-3 fw-normal text-white">REGISTRO DEL SUPERVISOR</h1>
-                      </div>
-                      <div class="form-floating">
-                        <input type="text" class="form-control" id="nombreInput" placeholder="Nombre del supervisor">
-                        <label for="nombreInput">Nombre del supervisor</label>
-                      </div>
-                      <div class="form-floating">
-                        <input type="text" class="form-control" id="apellidoInput" placeholder="Apellido del supervisor">
-                        <label for="apellidoInput">Apellido del supervisor</label>
-                      </div>
-                      <button id="btnsupervisor" class="btn btn-primary w-100 py-2" style="margin-bottom: 10px;">Registrar</button>
-                    </div>
-            </main>
+    <div class="d-flex flex-column flex-md-row p-4 gap-4 py-md-2 align-items-center justify-content-center"
+      style="margin: 1% 10%;">
+      <main class="d-flex align-items-center  justify-content-center modal-content p-4 rounded-4 shadow"
+        style="background-image: url(../Asset/fondotabla.png); min-width: 400px;">
+        <div>
+          <div style="text-align: center;">
+            <img class="mb-4" src="../Asset/Icon/supervisor.png" alt="" style="WIDTH: 150px;height: 170px;">
+            <h1 class="h3 mb-3 fw-normal text-white">REGISTRO DEL SUPERVISOR</h1>
+          </div>
+          <div class="form-floating">
+            <input type="text" class="form-control" id="nombreInput" placeholder="Nombre del supervisor">
+            <label for="nombreInput">Nombre del supervisor</label>
+          </div>
+          <div class="form-floating">
+            <input type="text" class="form-control" id="apellidoInput" placeholder="Apellido del supervisor">
+            <label for="apellidoInput">Apellido del supervisor</label>
+          </div>
+          <button id="btnsupervisor" class="btn btn-primary w-100 py-2" style="margin-bottom: 10px;">Registrar</button>
         </div>
-        <div class="d-flex flex-column flex-md-row p-4 gap-4 py-md-5 align-items-center justify-content-center"
+      </main>
+    </div>
+    <div class="d-flex flex-column flex-md-row p-4 gap-4 py-md-2 align-items-center justify-content-center"
       style="margin: 1% 10%;">
       <main class="d-flex align-items-center  justify-content-center modal-content p-4 rounded-4 shadow"
         style="background-image: url(../Asset/fondotabla.png); min-width: 400px;">
         <table class="table-auto w-[39rem] text-[1rem]">
           <thead class="text-xs font-semibold uppercase text-gray-400 bg-[#1f2937]">
-              <tr>
-                  <th >
-                      <div class="text-[3rem] text-white d-flex align-items-center  justify-content-center ">SUPERVISOR</div>
-                  </th>
-              </tr>
+            <tr>
+              <th>
+                <div class="text-[3rem] text-white d-flex align-items-center  justify-content-center ">CICLOS</div>
+              </th>
+            </tr>
           </thead>
           <tbody class="text-xs font-semibold uppercase text-gray-400 bg-[#1f2937]">
-              <tr>
-                  <td class=" text-[3rem] text-white p-2" id="supervisorvista" >
-                      
-                          <!-- SUPERVISOR -->
-                      
-                  </td>
-              </tr>
+            <tr>
+              <td class="text-[3rem] text-white p-2" id="">
+
+                <!-- CICLOS -->
+
+              </td>
+            </tr>
           </tbody>
-      </table>
+          <table class="table-auto w-[39rem] text-[1rem]">
+            <tbody class="divide-y divide-[#2f2c3d] text-white" id="supervisorvista">
+              <thead class="text-xs font-semibold uppercase text-gray-400 bg-[#1f2937] text-white">
+                <td class="p-2">
+                  Id
+                </td>
+                <td class="p-2">
+                  Nombre
+                </td>
+                <td class="p-2">
+                  Apellido
+                </td>
+              </thead>
+            </tbody>
+          </table>
+        </table>
       </main>
     </div>
+    <div class="d-flex d-none flex-column flex-md-row p-4 gap-4 py-md-2 align-items-center justify-content-center"
+      id="modifyBoxSupervisor" style="margin: 1% 10%;">
+      <main class="d-flex align-items-center  justify-content-center modal-content p-4 rounded-4 shadow"
+        style="background-image: url(../Asset/fondotabla.png); min-width: 400px;">
+        <table class="table-auto w-[39rem] text-[1rem]">
+          <thead class="text-xs font-semibold uppercase text-gray-400 bg-[#1f2937]">
+            <tr>
+              <th>
+                <div class="text-[3rem] text-white d-flex align-items-center  justify-content-center ">MODIFICAR</div>
+              </th>
+            </tr>
+          </thead>
+          <table class="table-auto w-[39rem] text-[1rem]">
+            <tbody class="divide-y divide-[#2f2c3d] text-white" id="">
+              <thead class="text-xs font-semibold uppercase text-gray-400 bg-[#1f2937] text-white">
+                <td class="p-2">
+                  <div class="form-floating">
+                    <input type="text" class="form-control" id="nombreSupervisor" placeholder="Nombre">
+                    <label for="nombreinput" class="text-black">Nombres</label>
+                  </div>
+                </td>
+                <td class="p-2">
+                  <div class="form-floating">
+                    <input type="text" class="form-control" id="apellidoSupervisor" placeholder="Nombre">
+                    <label for="nombreinput" class="text-black">Apellidos</label>
+                  </div>
+                </td>
+              </thead>
+            </tbody>
+          </table>
+        </table>
+        <p class="text-white">Nota: Los campos que se dejen en blanco serán ignorados.</p>
+        <button id="sendModifySupervisor" class="btn btn-outline-secondary" type="button" style="border-color: white;
+                                        color: white; ">Cambiar</button>
     </div>
-    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="../node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
-    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="../main.js" type="module"></script>
-    <script src="../Js/prevenir.js"></script>
-    <script src="../Js/prevenir3.js"></script>
-    <script src="../Js/crearSupervisor.js"></script>
-    <script src="../Js/vistascompletas.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  </div>
+  <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="../node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
+  <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="../main.js" type="module"></script>
+  <script src="../Js/prevenir.js"></script>
+  <script src="../Js/prevenir3.js"></script>
+  <script src="../Js/crearSupervisor.js"></script>
+  <script src="../Js/vistascompletas.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </body>
 
 </html>
