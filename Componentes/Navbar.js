@@ -4,12 +4,12 @@ class Nav extends HTMLElement {
     }
     connectedCallback() {
         this.innerHTML = `
-        <nav  class="navbar navbar-expand-lg navbar-light bg-light" style="padding: 0px 20px;height: 80px;font-size: 18px;">
+        <nav  class="navbar navbar-expand-lg navbar-light bg-light" style="padding: 0px 20px;font-size: 18px;">
           
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="true" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="navbar-collapse collapse show" id="navbarsExample01" style="">
+          <div class="navbar-collapse collapse show" id="navbarsExample01" >
         <ul class="navbar-nav me-auto mb-2">
           <li class="nav-item" style="display: flex;align-items: center;">
             <a class="nav-link active " aria-current="page" href="./index.html"><img src="../Asset/LOGO.png" style="width: 75px; height: 70px;"></a>
