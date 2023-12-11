@@ -28,8 +28,10 @@ const botonRegistrarCiclo = () => {
         const existe_usuario = json?.data[0]?.existe_usuario || 0;
         if(existe_usuario != 0){
             alert('Registro Completado');
+            location.reload()
         }else{
             alert('Fallo al crear el Ciclo');
         }
+        
     });
 }

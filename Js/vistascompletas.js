@@ -29,15 +29,35 @@ const mostrarciclo = async () => {
     const json = await response.json();
     for (let i = 0; i < json.data.length; i++) {
         const chatContainer = document.getElementById('ciclovista')
-        component = `
-                                    <div class="text-left">
-                                    ${json.data[i].idciclo}  -  ${json.data[i].ciclo}  
-                                    </div>         
-    `
+        component = ` 
+
+
+                        <tr>
+                            <td class="p-2">
+                                <div class="text-left col-12">
+                                ${json.data[i].idciclo}
+                                </div>
+                            </td>
+                            <td class="p-2">
+                                <div class="text-left col-12">
+                                ${json.data[i].ciclo} 
+                                </div>
+                            </td>
+                            <td class="p-2">
+                                <button id="btnModify" class="btn btn-outline-secondary" style="margin-bottom: 10px;border-color: white;
+                                color: white; ">Modificar</button>
+                            </td>
+                            <td class="p-2">
+                                <button onclick="eliminarCiclo(this)" id="btnDelete" class="btn btn-outline-secondary" style="margin-bottom: 10px;border-color: white;
+                                color: white; ">Eliminar</button>
+                            </td>
+                        </tr>
+                        `
         chatContainer.innerHTML += component
         chatContainer.scrollTop = chatContainer.scrollHeight;
     }
 }
+
 const mostrarcolegio = async () => {
 
     const API_URL = "http://13.59.147.125:8080/api/procedure"
@@ -67,6 +87,7 @@ const mostrarcolegio = async () => {
         chatContainer.scrollTop = chatContainer.scrollHeight;
     }
 }
+
 const mostrarsupervisor = async () => {
 
     const API_URL = "http://13.59.147.125:8080/api/procedure"
@@ -96,6 +117,7 @@ const mostrarsupervisor = async () => {
         chatContainer.scrollTop = chatContainer.scrollHeight;
     }
 }
+
 const mostrarcursos = async () => {
 
     const API_URL = "http://13.59.147.125:8080/api/procedure"
@@ -131,7 +153,7 @@ const mostrarcursos = async () => {
                     <div class="text-left">${json.data[i].ciclo}<br>
                     Inicio: ${json.data[i].fecha_inicio}<br>Fin: ${json.data[i].fecha_fin}
                     </div>
-                        <button onclick="obtenerValores(this)" id="enviar" class="btn btn-outline-secondary" type="button" style="border-color: white;
+                        <button onclick="registroUsuarioCurso(this)" id="enviar" class="btn btn-outline-secondary" type="button" style="border-color: white;
                         color: white;">Registrarme</button>
                 </td>
             </tr>         
@@ -143,7 +165,7 @@ const mostrarcursos = async () => {
 
 
 
-async function obtenerValores(btn) {
+async function registroUsuarioCurso(btn) {
     const fila = btn.parentNode.parentNode;
 
     const idcurso = fila.cells[0].innerText;
@@ -172,4 +194,34 @@ async function obtenerValores(btn) {
     } else {
         alert('Ya te encuentras Registrado');
     }
+}
+
+
+async function eliminarCiclo(btn) {
+
+    const API_URL = 'http://13.59.147.125:8080/api/procedure'
+    const idCurso = parseInt(btn.parentNode.parentNode.cells[0].innerText)
+    console.log(idCurso)
+    const body = {
+        "procedure": "{ CALL pnj.SP_PNJ_ELIMINAR_CICLO(?) }",
+        "params": [idCurso]
+    }
+    const response = await fetch(API_URL, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'mode': 'cors'
+        },
+        body: JSON.stringify(body)
+    })
+
+    const json = await response.json()
+
+    if(json.data[0].confirm_delete == 1){
+        alert('Ciclo eliminado')
+        location.reload()
+    } else {
+        alert('No se pudo eliminar el ciclo porque ya hay estudiantes dentro.')
+    }
+
 }
